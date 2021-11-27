@@ -22,9 +22,9 @@
           <div class="login-form-container">
             <form class="login-form">
               <div class="input-container">
-                <i class="fas fa-user icon"></i>
+                <i class="fas fa-user icon login"></i>
                 <input
-                  class="username-field"
+                  class="input-field"
                   id="username"
                   type="text"
                   name="username"
@@ -33,9 +33,9 @@
                 />
               </div>
               <div class="input-container">
-                <i class="fas fa-unlock-alt icon"></i>
+                <i class="fas fa-unlock-alt icon login"></i>
                 <input
-                  class="password-field"
+                  class="input-field"
                   id="password"
                   type="password"
                   name="password"
@@ -47,7 +47,7 @@
               <a class="forgot-password" href="#">Forgot password?</a>
 
               <input
-                class="login-button"
+                class="submit-btn login login-hover"
                 id="login-btn-js"
                 type="button"
                 name="login"
@@ -56,10 +56,110 @@
             </form>
           </div>
 
-          <p class="sign-up">No account? <a href="#">Sign Up</a></p>
+          <p class="sign-up">
+            No account? <a id="signup-link" href="#">Sign Up</a>
+          </p>
         </div>
-        <div class="right">
-          <div class="logo-container">
+        <div class="right login">
+          <div class="logo-container login">
+            <svg
+              class="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 108 105"
+            >
+              <rect class="cls-1" y="35" width="32" height="70" />
+              <rect class="cls-3" x="38" width="32" height="105" />
+              <rect class="cls-4" x="76" y="17" width="32" height="88" />
+            </svg>
+
+            <svg
+              class="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 311.87 104.96"
+            >
+              <path
+                class="cls-1"
+                d="M105.83,2.49v72q0,13.47-8.12,22t-21,8.5Q61.15,105,53,90.82,47.9,98.44,42.11,101.7T27.83,105q-13.47,0-20.65-8.5T0,72V2.49H29.74v65c0,3.22.25,5.35.77,6.37s1.54,1.54,3.11,1.54Q38,75.44,38,68V2.49H67.75v65q0,4.68.8,6.3a3.19,3.19,0,0,0,3.15,1.61q4.39,0,4.4-7.91v-65Z"
+              />
+              <path
+                class="cls-2"
+                d="M121.8,102.47V30.4q0-13.41,8.13-21.9T151,0q15.38,0,23.65,14.14,5.06-7.62,10.84-10.88T199.81,0q13.47,0,20.65,8.5T227.64,33v69.51H197.9v-65c0-3.23-.26-5.36-.77-6.41A3.11,3.11,0,0,0,194,29.44q-4.4,0-4.4,7.47v65.56H159.89v-65c0-3.18-.27-5.3-.81-6.38a3.19,3.19,0,0,0-3.15-1.61q-4.4,0-4.39,8v65Z"
+              />
+              <path
+                class="cls-2"
+                d="M289.16,31.2v71.27H259.42V31.2H236.65V2.49h75.22V31.2Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section class="page-2 hidden">
+        <div class="left">
+          <h1>Sign Up</h1>
+          <div class="signup-form-container">
+            <form class="signup-form">
+              <div class="input-container">
+                <i class="fas fa-at icon signup"></i>
+                <input
+                  class="input-field"
+                  id="email-signup"
+                  type="email"
+                  name="email-signup"
+                  placeholder="E-mail"
+                  required
+                />
+              </div>
+              <div class="input-container">
+                <i class="fas fa-user icon signup"></i>
+                <input
+                  class="input-field"
+                  id="username-signup"
+                  type="text"
+                  name="username-signup"
+                  placeholder="Username"
+                  required
+                />
+              </div>
+              <div class="input-container">
+                <i class="fas fa-unlock-alt icon signup"></i>
+                <input
+                  class="input-field"
+                  id="password-signup"
+                  type="password"
+                  name="password-signup"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <i class="fas fa-unlock-alt icon signup"></i>
+                <input
+                  class="input-field"
+                  id="password-signup-confirm"
+                  type="password"
+                  name="password-signup-confirm"
+                  placeholder="Confirm password"
+                  required
+                />
+              </div>
+
+              <input
+                class="submit-btn signup signup-hover"
+                id="signup-btn-js"
+                type="button"
+                name="signup"
+                value="Sign Up"
+              />
+            </form>
+          </div>
+
+          <p class="sign-up">
+            Have an account? <a id="login-link" href="#">Sign In</a>
+          </p>
+        </div>
+        <div class="right signup">
+          <div class="logo-container signup">
             <svg
               class="logo"
               xmlns="http://www.w3.org/2000/svg"

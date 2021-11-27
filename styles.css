@@ -1,0 +1,246 @@
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey-light: #eee;
+  --color-grey-dark: #42494f;
+  --color-white: #fff;
+  --color-blue-darkest: #001a31;
+  --color-blue-dark: #00527a;
+  --color-blue-mid: #00719c;
+  --color-blue-light: #a5c4ca;
+  --color-beige: #eedeb7;
+  --color-orange-light: #eba700;
+  --color-orange-mid: #cc7f00;
+  --color-orange-dark: #ba5909;
+  --color-red-1: #ae3a18;
+  --color-red-2: #a33e2a;
+  --box-shadow-default: 3px 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  /* background-color: var(--color-white); */
+  background: linear-gradient(to bottom right, #00719c, #00334d);
+  color: var(--color-blue-darkest);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-blue-darkest);
+}
+
+.hidden {
+  animation: fade-out 0.2s;
+  visibility: hidden;
+}
+
+.visible {
+  animation: fade-in 0.2s;
+  visibility: visible;
+}
+
+.container {
+  background-color: var(--color-grey-light);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 70%;
+  height: 90%;
+  box-shadow: -3px 6px 20px rgba(0, 0, 0, 0.3);
+  min-height: 80rem;
+  min-width: 100rem;
+}
+
+.page-1 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.page-1 h1 {
+  margin-bottom: 3rem;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+  background-color: var(--color-blue-darkest);
+  /* background: linear-gradient(var(--color-blue-mid), var(--color-blue-darkest)); */
+}
+
+.logo-container {
+  display: flex;
+  background-color: var(--color-blue-darkest);
+}
+
+.logo {
+  height: 7rem;
+  padding: 0.5rem;
+}
+
+.cls-1 {
+  fill: var(--color-white);
+}
+
+.cls-2 {
+  fill: var(--color-orange-light);
+}
+
+.cls-3 {
+  fill: var(--color-beige);
+}
+
+.cls-4 {
+  fill: var(--color-orange-light);
+}
+
+.login {
+  font-size: 2.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  margin: 0.5rem;
+}
+
+.username-field,
+.password-field {
+  padding: 1rem 1rem 1rem 6rem;
+  border: 0.5px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.username-field:hover,
+.password-field:hover {
+  background-color: rgb(232, 240, 254);
+}
+
+/* .username-field:active,
+.password-field:active {
+} */
+
+.login-form i {
+  position: absolute;
+}
+
+.icon {
+  padding: 1.2rem 2rem 1.2rem 1.4rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  background-color: var(--color-blue-darkest);
+  color: var(--color-white);
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.login-button {
+  margin: 2rem;
+  padding: 1.2rem 4rem;
+  background-color: var(--color-blue-darkest);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.6rem;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: var(--color-blue-dark);
+}
+
+.login-button:active {
+  box-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.forgot-password {
+  margin-top: 0.3rem;
+  font-size: 1.4rem;
+  color: var(--color-blue-dark);
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.sign-up {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+}
+
+.sign-up a {
+  color: var(--color-blue-mid);
+}
+
+.sign-up a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

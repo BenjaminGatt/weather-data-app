@@ -46,6 +46,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 h1 {
@@ -80,6 +81,7 @@ a {
   box-shadow: -3px 6px 20px rgba(0, 0, 0, 0.3);
   /* min-height: 80rem;
   min-width: 100rem; */
+  overflow: hidden;
 }
 
 .page-1,
@@ -387,6 +389,30 @@ a {
 
 .content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.data-grid {
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  /* border: 1px solid black; */
+  overflow-y: scroll;
+}
+
+.data-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.chart-container {
+  /* border: 1px solid black; */
+  grid-column: 1 / span 3;
 }
 
 @keyframes fade-in {

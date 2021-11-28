@@ -236,22 +236,41 @@
         <div class="page-3-body">
           <nav class="menu">
             <ul>
-              <li>Weather Data</li>
-              <li>Data Comparison</li>
-              <li>Monthly</li>
-              <li>Energy Comparison</li>
+              <li id="weather-data-btn">Weather Data</li>
+              <li id="data-comparison-btn">Data Comparison</li>
+              <li id="monthly-comparison-btn">Monthly</li>
+              <li id="energy-comparison-btn">Energy Comparison</li>
             </ul>
           </nav>
-          <div class="content">456</div>
+          <div class="content">
+            <p class="data-title">Weather Data</p>
+            <div id="weather-data-container" class="data-grid">
+              <div class="chart-container">
+                <canvas id="bar-chart" class="chart"></canvas>
+              </div>
+              <div class="chart-container">
+                <canvas id="bar-chart-2" class="chart"></canvas>
+              </div>
+            </div>
+            <div id="data-comparison-container" class="data-grid hidden">
+              data-comparison-container
+            </div>
+            <div id="monthly-comparison-container" class="data-grid hidden">
+              monthly-comparison-container
+            </div>
+            <div id="energy-comparison-container" class="data-grid hidden">
+              energy-comparison-container
+            </div>
+          </div>
         </div>
       </section>
     </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
     <script
       src="https://kit.fontawesome.com/a3559c3e08.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

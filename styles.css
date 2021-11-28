@@ -430,6 +430,7 @@ a {
 .chart-container {
   grid-column: 1 / span 3;
   padding: 0 5rem;
+  min-width: 50rem;
 }
 
 .chart-data {

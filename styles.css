@@ -76,7 +76,7 @@ a {
   background-color: var(--color-grey-light);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 70%;
+  width: 90%;
   height: 90%;
   box-shadow: -3px 6px 20px rgba(0, 0, 0, 0.3);
   /* min-height: 80rem;
@@ -306,7 +306,7 @@ a {
 }
 
 .top-bar {
-  height: 7em;
+  height: 7rem;
   background-color: var(--color-white);
   display: flex;
   align-items: center;
@@ -359,7 +359,7 @@ a {
 .page-3-body {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 92%;
 }
 
 .menu {
@@ -370,10 +370,19 @@ a {
 }
 
 .menu ul {
+  width: 100%;
   margin-top: 5rem;
   list-style: none;
   font-size: 1.5rem;
   font-weight: 300;
+}
+
+.menu ul:first-child {
+  flex-grow: 1;
+}
+
+.menu ul:last-child {
+  margin-bottom: 2rem;
 }
 
 .menu ul li {
@@ -387,32 +396,74 @@ a {
   background-color: var(--color-blue-mid);
 }
 
+/* .menu ul li:nth-child(5) {
+  margin-top: 38rem;
+}
+
+.menu ul li:last-child {
+  margin-top: 3rem;
+} */
+
 .content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow-y: scroll;
+  padding-bottom: 5rem;
 }
 
 .data-grid {
-  width: 80%;
-  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1.5rem;
-  /* border: 1px solid black; */
-  overflow-y: scroll;
+  gap: 10rem 0;
 }
 
 .data-title {
+  margin: 3rem;
   font-size: 2.5rem;
   font-weight: 300;
-  text-align: center;
+  align-self: flex-start;
 }
 
 .chart-container {
-  /* border: 1px solid black; */
   grid-column: 1 / span 3;
+  padding: 0 5rem;
+}
+
+.chart-data {
+  grid-column: 4;
+  display: flex;
+  align-items: center;
+  padding-left: 8rem;
+}
+
+.months-table {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.months-table thead {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.months-table thead td {
+  border-bottom: 1px solid var(--color-blue-light);
+}
+
+.months-table td {
+  padding: 0 1rem;
+}
+
+.months-table td:first-child {
+  text-align: right;
+  border-right: 1px solid var(--color-blue-light);
+}
+
+.months-table td:nth-child(2) {
+  text-align: center;
 }
 
 @keyframes fade-in {
@@ -444,7 +495,7 @@ a {
   }
 
   50% {
-    box-shadow: inset 2rem 0 0 0 var(--color-blue-mid);
+    box-shadow: inset 1rem 0 0 0 var(--color-blue-mid);
   }
 
   100% {

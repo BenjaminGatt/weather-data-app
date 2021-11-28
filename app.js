@@ -42,17 +42,26 @@ const elArr = [
   energyComparisonEl,
 ];
 
-const barChart = document.getElementById("bar-chart").getContext("2d");
-const barChart2 = document.getElementById("bar-chart-2").getContext("2d");
+const minTemp2018 = document.getElementById("min-temp-2018").getContext("2d");
+const maxTemp2018 = document.getElementById("max-temp-2018").getContext("2d");
+const rainfall2018 = document.getElementById("rainfall-2018").getContext("2d");
 
 document.getElementById("signup-link").addEventListener("click", () => {
   document.querySelector(".page-1").classList.add("hidden");
   document.querySelector(".page-2").classList.remove("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
 });
 
 document.getElementById("login-link").addEventListener("click", () => {
-  document.querySelector(".page-2").classList.add("hidden");
   document.querySelector(".page-1").classList.remove("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
+});
+
+document.getElementById("login-btn").addEventListener("click", () => {
+  document.querySelector(".page-1").classList.add("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.remove("hidden");
 });
 
 weatherDataBtn.addEventListener("click", function () {
@@ -77,7 +86,7 @@ function showEl(el) {
   el.classList.remove("hidden");
 }
 
-let barChartJS = new Chart(barChart, {
+let minTemp2018JS = new Chart(minTemp2018, {
   type: "bar",
   data: {
     labels: [
@@ -131,7 +140,7 @@ let barChartJS = new Chart(barChart, {
   },
 });
 
-let barChart2JS = new Chart(barChart2, {
+let maxTemp2018JS = new Chart(maxTemp2018, {
   type: "bar",
   data: {
     labels: [
@@ -171,6 +180,60 @@ let barChart2JS = new Chart(barChart2, {
         title: {
           display: true,
           text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let rainfall2018JS = new Chart(rainfall2018, {
+  type: "bar",
+  data: {
+    labels: [
+      "January",
+      "Fenbruary",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    datasets: [
+      {
+        data: [0.5, 135.2, 31.7, 34.2, 4.1, 10.3, 0, 22.1, 5, 217.8, 54.5, 17],
+        backgroundColor: [blueMid],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    plugins: {
+      title: {
+        text: "Rainfall in 2018",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Millimetres",
           font: {
             size: 15,
           },

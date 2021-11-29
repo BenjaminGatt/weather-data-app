@@ -447,7 +447,7 @@ a {
 .data-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 10rem 0;
 }
 
@@ -459,25 +459,25 @@ a {
 }
 
 .chart-container {
-  grid-column: 1 / span 3;
+  grid-column: 2 / span 3;
   padding: 0 5rem;
   min-width: 50rem;
 }
 
 .chart-data {
-  grid-column: 4;
-  display: flex;
-  align-items: center;
+  grid-column: 5;
+  /* display: flex;
+  align-items: center; */
   padding-left: 8rem;
 }
 
 .months-table {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 
 .months-table thead {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
@@ -496,6 +496,28 @@ a {
 
 .months-table td:nth-child(2) {
   text-align: center;
+}
+
+.filter-div {
+  margin-bottom: 5rem;
+  padding: 1rem 1rem 1rem 0rem;
+  font-size: 1.3rem;
+  background-color: var(--color-grey-light);
+  width: 100%;
+  text-align: right;
+}
+
+.filter-div input {
+  margin-left: 3rem;
+}
+
+.filter-div input[type="checkbox"] {
+  transform: translateY(0.1rem);
+}
+
+.filter-div select {
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
 }
 
 @keyframes fade-in {

@@ -25,6 +25,8 @@ const weatherDataBtn = document.getElementById("weather-data-btn");
 const dataComparisonBtn = document.getElementById("data-comparison-btn");
 const monthlyComparisonBtn = document.getElementById("monthly-comparison-btn");
 const energyComparisonBtn = document.getElementById("energy-comparison-btn");
+const settingsMenuBtn = document.getElementById("settings-menu-btn");
+const logoutMenuBtn = document.getElementById("logout-menu-btn");
 
 const weatherDataEl = document.getElementById("weather-data-container");
 const dataComparisonEl = document.getElementById("data-comparison-container");
@@ -34,6 +36,15 @@ const monthlyComparisonEl = document.getElementById(
 const energyComparisonEl = document.getElementById(
   "energy-comparison-container"
 );
+
+const btnArr = [
+  weatherDataBtn,
+  dataComparisonBtn,
+  monthlyComparisonBtn,
+  energyComparisonBtn,
+  settingsMenuBtn,
+  logoutMenuBtn,
+];
 
 const elArr = [
   weatherDataEl,
@@ -58,6 +69,12 @@ document.getElementById("login-link").addEventListener("click", () => {
   document.querySelector(".page-3").classList.add("hidden");
 });
 
+document.getElementById("signup-btn").addEventListener("click", () => {
+  document.querySelector(".page-1").classList.add("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.remove("hidden");
+});
+
 document.getElementById("login-btn").addEventListener("click", () => {
   document.querySelector(".page-1").classList.add("hidden");
   document.querySelector(".page-2").classList.add("hidden");
@@ -65,16 +82,35 @@ document.getElementById("login-btn").addEventListener("click", () => {
 });
 
 weatherDataBtn.addEventListener("click", function () {
+  highlightBtn(weatherDataBtn);
   showEl(weatherDataEl);
 });
+
 dataComparisonBtn.addEventListener("click", function () {
+  highlightBtn(dataComparisonBtn);
   showEl(dataComparisonEl);
 });
+
 monthlyComparisonBtn.addEventListener("click", function () {
+  highlightBtn(monthlyComparisonBtn);
   showEl(monthlyComparisonEl);
 });
+
 energyComparisonBtn.addEventListener("click", function () {
+  highlightBtn(energyComparisonBtn);
   showEl(energyComparisonEl);
+});
+
+settingsMenuBtn.addEventListener("click", function () {
+  highlightBtn(settingsMenuBtn);
+});
+
+logoutMenuBtn.addEventListener("click", function () {
+  highlightBtn(weatherDataBtn);
+  showEl(weatherDataEl);
+  document.querySelector(".page-1").classList.remove("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
 });
 
 function showEl(el) {
@@ -84,6 +120,15 @@ function showEl(el) {
     }
   });
   el.classList.remove("hidden");
+}
+
+function highlightBtn(btn) {
+  btnArr.forEach((button) => {
+    if (button !== btn) {
+      button.classList.remove("menu-selected");
+    }
+  });
+  btn.classList.add("menu-selected");
 }
 
 let minTemp2018JS = new Chart(minTemp2018, {

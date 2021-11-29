@@ -151,8 +151,8 @@ a {
   background-color: var(--color-grey-light);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   box-shadow: -3px 6px 20px rgba(0, 0, 0, 0.3);
   min-height: 63rem;
   min-width: 123rem;
@@ -309,9 +309,11 @@ a {
 
 .top-bar {
   height: 7rem;
-  background-color: var(--color-white);
+  background-color: var(--color-grey-light);
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
 }
 
 .spacer {
@@ -361,7 +363,7 @@ a {
 .page-3-body {
   display: flex;
   width: 100%;
-  height: 92%;
+  height: 92.5%;
 }
 
 .menu {
@@ -395,6 +397,7 @@ a {
   cursor: pointer;
   box-shadow: inset 0 0 0 0 var(--color-blue-darkest);
   z-index: 10;
+  transition: color 0.2s;
 }
 
 .menu ul li:not(.menu ul li:last-child) {
@@ -438,6 +441,7 @@ a {
   justify-content: flex-start;
   overflow-y: scroll;
   padding-bottom: 5rem;
+  background-color: #e1e1e1;
 }
 
 .data-grid {

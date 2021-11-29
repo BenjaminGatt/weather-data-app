@@ -248,6 +248,20 @@
           </nav>
           <div class="content">
             <p class="data-title">Weather Data</p>
+
+            <div>
+              <select name="year" id="weather-data-year-select">
+                <option value="2018">2018</option>
+                <option value="2018">2019</option>
+                <option value="2018">2020</option>
+              </select>
+              <input type="checkbox" name="min-temp" />
+              <label for="min-temp">Minimum Temperature</label>
+              <input type="checkbox" name="max-temp" />
+              <label for="max-temp">Maximum Temperature</label>
+              <input type="checkbox" name="precipitation" />
+              <label for="precipitation">Precipitation</label>
+            </div>
             <div id="weather-data-container" class="data-grid">
               <div class="chart-container">
                 <canvas id="min-temp-2018" class="chart"></canvas>

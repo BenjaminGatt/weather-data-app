@@ -308,7 +308,7 @@ a {
 }
 
 .top-bar {
-  height: 7rem;
+  height: 7%;
   background-color: var(--color-grey-light);
   display: flex;
   align-items: center;
@@ -363,11 +363,12 @@ a {
 .page-3-body {
   display: flex;
   width: 100%;
-  height: 92.5%;
+  height: 93%;
 }
 
 .menu {
   width: 22.5rem;
+  height: 100%;
   background-color: var(--color-blue-darkest);
   color: var(--color-white);
   align-items: flex-start;
@@ -376,7 +377,7 @@ a {
 
 .menu ul {
   width: 100%;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   list-style: none;
   font-size: 1.5rem;
   font-weight: 400;
@@ -384,11 +385,12 @@ a {
 }
 
 .menu ul:first-child {
+  padding-top: 5rem;
   flex-grow: 1;
 }
 
 .menu ul:last-child {
-  margin-bottom: 2rem;
+  /* padding-bottom: 5rem; */
 }
 
 .menu ul li {
@@ -439,16 +441,19 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   padding-bottom: 5rem;
   background-color: #eaeaea;
 }
 
 .data-grid {
+  padding: 5rem 0;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 10rem 0;
+  overflow-y: scroll;
+  height: 76vh;
 }
 
 .data-page {
@@ -506,8 +511,7 @@ a {
 }
 
 .filter-div {
-  margin-bottom: 10rem;
-  padding: 1rem 1rem 1rem 0rem;
+  padding: 1.5rem 1rem 1.5rem 0rem;
   font-size: 1.3rem;
   background-color: var(--color-grey-light);
   width: 100%;

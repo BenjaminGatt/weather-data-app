@@ -28,14 +28,10 @@ const energyComparisonBtn = document.getElementById("energy-comparison-btn");
 const settingsMenuBtn = document.getElementById("settings-menu-btn");
 const logoutMenuBtn = document.getElementById("logout-menu-btn");
 
-const weatherDataEl = document.getElementById("weather-data-container");
-const dataComparisonEl = document.getElementById("data-comparison-container");
-const monthlyComparisonEl = document.getElementById(
-  "monthly-comparison-container"
-);
-const energyComparisonEl = document.getElementById(
-  "energy-comparison-container"
-);
+const weatherDataEl = document.getElementById("weather-data-page");
+const dataComparisonEl = document.getElementById("data-comparison-page");
+const monthlyComparisonEl = document.getElementById("monthly-comparison-page");
+const energyComparisonEl = document.getElementById("energy-comparison-page");
 
 const btnArr = [
   weatherDataBtn,

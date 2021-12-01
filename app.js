@@ -24,20 +24,22 @@ document.getElementById("login-btn").addEventListener("click", () => {
 
 const r = document.querySelector(":root");
 
-const white = getCssVar("--color-white");
-const black = getCssVar("--color-black");
-const greyLight = getCssVar("--color-grey-light");
-const greyDark = getCssVar("--color-grey-dark");
-const blueDarkest = getCssVar("--color-blue-darkest");
-const blueDark = getCssVar("--color-blue-dark");
-const blueMid = getCssVar("--color-blue-mid");
-const blueLight = getCssVar("--color-blue-light");
-const beige = getCssVar("--color-beige");
-const orangeLight = getCssVar("--color-orange-light");
-const orangeMid = getCssVar("--color-orange-mid");
-const orangeDark = getCssVar("--color-orange-dark");
-const red1 = getCssVar("--color-red-1");
-const red2 = getCssVar("--color-red-2");
+const colours = {
+  white: getCssVar("--color-white"),
+  black: getCssVar("color-black"),
+  greyLight: getCssVar("--color-grey-light"),
+  greyDark: getCssVar("--color-grey-dark"),
+  blueDarkest: getCssVar("--color-blue-darkest"),
+  blueDark: getCssVar("--color-blue-dark"),
+  blueMid: getCssVar("--color-blue-mid"),
+  blueLight: getCssVar("--color-blue-light"),
+  beige: getCssVar("--color-beige"),
+  orangeLight: getCssVar("--color-orange-light"),
+  orangeMid: getCssVar("--color-orange-mid"),
+  orangeDark: getCssVar("--color-orange-dark"),
+  red1: getCssVar("--color-red-1"),
+  red2: getCssVar("--color-red-2"),
+};
 
 function getCssVar(varName) {
   // Get the styles (properties and values) for the root
@@ -45,32 +47,36 @@ function getCssVar(varName) {
   return rs.getPropertyValue(varName);
 }
 
-const weatherDataBtn = document.getElementById("weather-data-btn");
-const dataComparisonBtn = document.getElementById("data-comparison-btn");
-const monthlyComparisonBtn = document.getElementById("monthly-comparison-btn");
-const energyComparisonBtn = document.getElementById("energy-comparison-btn");
-const settingsMenuBtn = document.getElementById("settings-menu-btn");
-const logoutMenuBtn = document.getElementById("logout-menu-btn");
+const btns = {
+  weatherDataBtn: document.getElementById("weather-data-btn"),
+  dataComparisonBtn: document.getElementById("data-comparison-btn"),
+  monthlyComparisonBtn: document.getElementById("monthly-comparison-btn"),
+  energyComparisonBtn: document.getElementById("energy-comparison-btn"),
+  settingsMenuBtn: document.getElementById("settings-menu-btn"),
+  logoutMenuBtn: document.getElementById("logout-menu-btn"),
+};
 
 const btnArr = [
-  weatherDataBtn,
-  dataComparisonBtn,
-  monthlyComparisonBtn,
-  energyComparisonBtn,
-  settingsMenuBtn,
-  logoutMenuBtn,
+  btns.weatherDataBtn,
+  btns.dataComparisonBtn,
+  btns.monthlyComparisonBtn,
+  btns.energyComparisonBtn,
+  btns.settingsMenuBtn,
+  btns.logoutMenuBtn,
 ];
 
-const weatherDataEl = document.getElementById("weather-data-page");
-const dataComparisonEl = document.getElementById("data-comparison-page");
-const monthlyComparisonEl = document.getElementById("monthly-comparison-page");
-const energyComparisonEl = document.getElementById("energy-comparison-page");
+const dataPages = {
+  weatherDataEl: document.getElementById("weather-data-page"),
+  dataComparisonEl: document.getElementById("data-comparison-page"),
+  monthlyComparisonEl: document.getElementById("monthly-comparison-page"),
+  energyComparisonEl: document.getElementById("energy-comparison-page"),
+};
 
 const navArr = [
-  weatherDataEl,
-  dataComparisonEl,
-  monthlyComparisonEl,
-  energyComparisonEl,
+  dataPages.weatherDataEl,
+  dataPages.dataComparisonEl,
+  dataPages.monthlyComparisonEl,
+  dataPages.energyComparisonEl,
 ];
 
 const weatherDataYearSelect = document.getElementById(
@@ -102,13 +108,54 @@ const weatherDataYearArr = [
   weatherDataContainer2020,
 ];
 
+function resetCheckBoxes(year) {
+  if (year.minTemp == true) {
+    weatherDataMinTempCheckbox.checked = true;
+  } else {
+    weatherDataMinTempCheckbox.checked = false;
+  }
+
+  if (year.maxTemp == true) {
+    weatherDataMaxTempCheckbox.checked = true;
+  } else {
+    weatherDataMaxTempCheckbox.checked = false;
+  }
+
+  if (year.precipitation == true) {
+    weatherDataPrecipitationCheckbox.checked = true;
+  } else {
+    weatherDataPrecipitationCheckbox.checked = false;
+  }
+}
+
+const checkBoxes2018 = {
+  minTemp: true,
+  maxTemp: true,
+  precipitation: true,
+};
+
+const checkBoxes2019 = {
+  minTemp: true,
+  maxTemp: true,
+  precipitation: true,
+};
+
+const checkBoxes2020 = {
+  minTemp: true,
+  maxTemp: true,
+  precipitation: true,
+};
+
 weatherDataYearSelect.addEventListener("change", () => {
   if (weatherDataYearSelect.value == "2018") {
     showEl(weatherDataContainer2018, weatherDataYearArr);
+    resetCheckBoxes(checkBoxes2018);
   } else if (weatherDataYearSelect.value == "2019") {
     showEl(weatherDataContainer2019, weatherDataYearArr);
+    resetCheckBoxes(checkBoxes2019);
   } else if (weatherDataYearSelect.value == "2020") {
     showEl(weatherDataContainer2020, weatherDataYearArr);
+    resetCheckBoxes(checkBoxes2020);
   } else {
     showEl(defaultEl, weatherDataYearArr);
   }
@@ -116,61 +163,133 @@ weatherDataYearSelect.addEventListener("change", () => {
 
 weatherDataMinTempCheckbox.addEventListener("change", () => {
   if (weatherDataYearSelect.value == "2018") {
-    minTemp2018ChartContainer.classList.toggle("hidden");
-    minTemp2018Table.classList.toggle("hidden");
+    if (weatherDataMinTempCheckbox.checked) {
+      checkBoxes2018.minTemp = true;
+      minTemp2018ChartContainer.classList.remove("hidden");
+      minTemp2018Table.classList.remove("hidden");
+    } else {
+      checkBoxes2018.minTemp = false;
+      minTemp2018ChartContainer.classList.add("hidden");
+      minTemp2018Table.classList.add("hidden");
+    }
   } else if (weatherDataYearSelect.value == "2019") {
-    minTemp2019ChartContainer.classList.toggle("hidden");
-    minTemp2019Table.classList.toggle("hidden");
+    if (weatherDataMinTempCheckbox.checked) {
+      checkBoxes2019.minTemp = true;
+      minTemp2019ChartContainer.classList.remove("hidden");
+      minTemp2019Table.classList.remove("hidden");
+    } else {
+      checkBoxes2019.minTemp = false;
+      minTemp2019ChartContainer.classList.add("hidden");
+      minTemp2019Table.classList.add("hidden");
+    }
+  } else if (weatherDataYearSelect.value == "2020") {
+    if (weatherDataMinTempCheckbox.checked) {
+      checkBoxes2020.minTemp = true;
+      minTemp2020ChartContainer.classList.remove("hidden");
+      minTemp2020Table.classList.remove("hidden");
+    } else {
+      checkBoxes2020.minTemp = false;
+      minTemp2020ChartContainer.classList.add("hidden");
+      minTemp2020Table.classList.add("hidden");
+    }
   }
 });
 
 weatherDataMaxTempCheckbox.addEventListener("change", () => {
   if (weatherDataYearSelect.value == "2018") {
-    maxTemp2018ChartContainer.classList.toggle("hidden");
-    maxTemp2018Table.classList.toggle("hidden");
+    if (weatherDataMaxTempCheckbox.checked) {
+      checkBoxes2018.maxTemp = true;
+      maxTemp2018ChartContainer.classList.remove("hidden");
+      maxTemp2018Table.classList.remove("hidden");
+    } else {
+      checkBoxes2018.maxTemp = false;
+      maxTemp2018ChartContainer.classList.add("hidden");
+      maxTemp2018Table.classList.add("hidden");
+    }
   } else if (weatherDataYearSelect.value == "2019") {
-    maxTemp2019ChartContainer.classList.toggle("hidden");
-    maxTemp2019Table.classList.toggle("hidden");
+    if (weatherDataMaxTempCheckbox.checked) {
+      checkBoxes2019.maxTemp = true;
+      maxTemp2019ChartContainer.classList.remove("hidden");
+      maxTemp2019Table.classList.remove("hidden");
+    } else {
+      checkBoxes2019.maxTemp = false;
+      maxTemp2019ChartContainer.classList.add("hidden");
+      maxTemp2019Table.classList.add("hidden");
+    }
+  } else if (weatherDataYearSelect.value == "2020") {
+    if (weatherDataMaxTempCheckbox.checked) {
+      checkBoxes2020.maxTemp = true;
+      maxTemp2020ChartContainer.classList.remove("hidden");
+      maxTemp2020Table.classList.remove("hidden");
+    } else {
+      checkBoxes2020.maxTemp = false;
+      maxTemp2020ChartContainer.classList.add("hidden");
+      maxTemp2020Table.classList.add("hidden");
+    }
   }
 });
 
 weatherDataPrecipitationCheckbox.addEventListener("change", () => {
   if (weatherDataYearSelect.value == "2018") {
-    precipitation2018ChartContainer.classList.toggle("hidden");
-    precipitation2018Table.classList.toggle("hidden");
+    if (weatherDataPrecipitationCheckbox.checked) {
+      checkBoxes2018.precipitation = true;
+      precipitation2018ChartContainer.classList.remove("hidden");
+      precipitation2018Table.classList.remove("hidden");
+    } else {
+      checkBoxes2018.precipitation = false;
+      precipitation2018ChartContainer.classList.add("hidden");
+      precipitation2018Table.classList.add("hidden");
+    }
   } else if (weatherDataYearSelect.value == "2019") {
-    precipitation2019ChartContainer.classList.toggle("hidden");
-    precipitation2019Table.classList.toggle("hidden");
+    if (weatherDataPrecipitationCheckbox.checked) {
+      checkBoxes2019.precipitation = true;
+      precipitation2019ChartContainer.classList.remove("hidden");
+      precipitation2019Table.classList.remove("hidden");
+    } else {
+      checkBoxes2019.precipitation = false;
+      precipitation2019ChartContainer.classList.add("hidden");
+      precipitation2019Table.classList.add("hidden");
+    }
+  } else if (weatherDataYearSelect.value == "2020") {
+    if (weatherDataPrecipitationCheckbox.checked) {
+      checkBoxes2020.precipitation = true;
+      precipitation2020ChartContainer.classList.remove("hidden");
+      precipitation2020Table.classList.remove("hidden");
+    } else {
+      checkBoxes2020.precipitation = false;
+      precipitation2020ChartContainer.classList.add("hidden");
+      precipitation2020Table.classList.add("hidden");
+    }
   }
 });
 
-weatherDataBtn.addEventListener("click", function () {
-  highlightBtn(weatherDataBtn);
-  showEl(weatherDataEl, navArr);
+btns.weatherDataBtn.addEventListener("click", function () {
+  highlightBtn(btns.weatherDataBtn);
+  showEl(dataPages.weatherDataEl, navArr);
 });
 
-dataComparisonBtn.addEventListener("click", function () {
-  highlightBtn(dataComparisonBtn);
-  showEl(dataComparisonEl, navArr);
+btns.dataComparisonBtn.addEventListener("click", function () {
+  highlightBtn(btns.dataComparisonBtn);
+  showEl(dataPages.dataComparisonEl, navArr);
 });
 
-monthlyComparisonBtn.addEventListener("click", function () {
-  highlightBtn(monthlyComparisonBtn);
-  showEl(monthlyComparisonEl, navArr);
+btns.monthlyComparisonBtn.addEventListener("click", function () {
+  highlightBtn(btns.monthlyComparisonBtn);
+  showEl(dataPages.monthlyComparisonEl, navArr);
 });
 
-energyComparisonBtn.addEventListener("click", function () {
-  highlightBtn(energyComparisonBtn);
-  showEl(energyComparisonEl, navArr);
+btns.energyComparisonBtn.addEventListener("click", function () {
+  highlightBtn(btns.energyComparisonBtn);
+  showEl(dataPages.energyComparisonEl, navArr);
 });
 
-settingsMenuBtn.addEventListener("click", function () {
-  highlightBtn(settingsMenuBtn);
+btns.settingsMenuBtn.addEventListener("click", function () {
+  highlightBtn(btns.settingsMenuBtn);
 });
 
-logoutMenuBtn.addEventListener("click", function () {
-  highlightBtn(weatherDataBtn);
-  showEl(weatherDataEl, navArr);
+btns.logoutMenuBtn.addEventListener("click", function () {
+  highlightBtn(btns.weatherDataBtn);
+  showEl(dataPages.weatherDataEl, navArr);
   document.querySelector(".page-1").classList.remove("hidden");
   document.querySelector(".page-2").classList.add("hidden");
   document.querySelector(".page-3").classList.add("hidden");
@@ -268,6 +387,36 @@ const precipitation2019Arr = [
   64.9, 39.1, 56.8, 27.5, 21.2, 0, 1.3, 0.2, 78.4, 106, 129.3, 34.6,
 ];
 
+const minTemp2020Chart = document
+  .getElementById("min-temp-2020-chart")
+  .getContext("2d");
+const maxTemp2020Chart = document
+  .getElementById("max-temp-2020-chart")
+  .getContext("2d");
+const precipitation2020Chart = document
+  .getElementById("precipitation-2020-chart")
+  .getContext("2d");
+
+const minTemp2020ChartContainer = document.getElementById(
+  "min-temp-2020-chart-container"
+);
+const maxTemp2020ChartContainer = document.getElementById(
+  "max-temp-2020-chart-container"
+);
+const precipitation2020ChartContainer = document.getElementById(
+  "precipitation-2020-chart-container"
+);
+const minTemp2020Table = document.getElementById("min-temp-2020-table");
+const maxTemp2020Table = document.getElementById("max-temp-2020-table");
+const precipitation2020Table = document.getElementById(
+  "precipitation-2020-table"
+);
+const minTemp2020Arr = [5, 6, 8, 10, 13, 16, 21, 23, 18, 13, 12, 9];
+const maxTemp2020Arr = [18, 19, 22, 25, 32, 32, 36, 38, 32, 30, 24, 21];
+const precipitation2020Arr = [
+  8.9, 0.5, 33.2, 8.2, 6.6, 0, 0.3, 0, 133.7, 32.5, 86.6, 94.1,
+];
+
 let minTemp2018JS = new Chart(minTemp2018Chart, {
   type: "bar",
   data: {
@@ -275,7 +424,7 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
     datasets: [
       {
         data: minTemp2018Arr,
-        backgroundColor: [blueMid],
+        backgroundColor: [colours.blueMid],
       },
     ],
   },
@@ -316,7 +465,7 @@ let maxTemp2018JS = new Chart(maxTemp2018Chart, {
     datasets: [
       {
         data: maxTemp2018Arr,
-        backgroundColor: [red2],
+        backgroundColor: [colours.red2],
       },
     ],
   },
@@ -357,7 +506,7 @@ let precipitation2018JS = new Chart(precipitation2018Chart, {
     datasets: [
       {
         data: precipitation2018Arr,
-        backgroundColor: [blueMid],
+        backgroundColor: [colours.blueMid],
       },
     ],
   },
@@ -397,8 +546,8 @@ let minTemp2019JS = new Chart(minTemp2019Chart, {
     labels: monthsArr,
     datasets: [
       {
-        data: [4, 4, 9, 9, 10, 15, 21, 22, 19, 16, 10, 7],
-        backgroundColor: [blueMid],
+        data: minTemp2019Arr,
+        backgroundColor: [colours.blueMid],
       },
     ],
   },
@@ -439,7 +588,7 @@ let maxTemp2019JS = new Chart(maxTemp2019Chart, {
     datasets: [
       {
         data: maxTemp2019Arr,
-        backgroundColor: [red2],
+        backgroundColor: [colours.red2],
       },
     ],
   },
@@ -480,7 +629,7 @@ let precipitation2019JS = new Chart(precipitation2019Chart, {
     datasets: [
       {
         data: precipitation2019Arr,
-        backgroundColor: [blueMid],
+        backgroundColor: [colours.blueMid],
       },
     ],
   },
@@ -489,6 +638,129 @@ let precipitation2019JS = new Chart(precipitation2019Chart, {
     plugins: {
       title: {
         text: "Rainfall in 2019",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Millimetres",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let minTemp2020JS = new Chart(minTemp2020Chart, {
+  type: "bar",
+  data: {
+    labels: monthsArr,
+    datasets: [
+      {
+        data: minTemp2020Arr,
+        backgroundColor: [colours.blueMid],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    plugins: {
+      title: {
+        text: "Minimum Temperature 2020",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let maxTemp2020JS = new Chart(maxTemp2020Chart, {
+  type: "bar",
+  data: {
+    labels: monthsArr,
+    datasets: [
+      {
+        data: maxTemp2020Arr,
+        backgroundColor: [colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    plugins: {
+      title: {
+        text: "Maximum Temperature 2020",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitation2020JS = new Chart(precipitation2020Chart, {
+  type: "bar",
+  data: {
+    labels: monthsArr,
+    datasets: [
+      {
+        data: precipitation2020Arr,
+        backgroundColor: [colours.blueMid],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    plugins: {
+      title: {
+        text: "Rainfall in 2020",
         display: true,
       },
       legend: {

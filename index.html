@@ -267,14 +267,16 @@
                   type="checkbox"
                   name="max-temp"
                   id="weather-data-max-temp-checkbox"
+                  checked
                 />
                 <label for="max-temp">Maximum Temperature</label>
                 <input
                   type="checkbox"
                   name="precipitation"
                   id="weather-data-precipitation-checkbox"
+                  checked
                 />
-                <label for="precipitation">Precipitation</label>
+                <label for="precipitation">Rainfall</label>
               </div>
 
               <div id="weather-data-container-2018" class="data-grid">
@@ -341,13 +343,10 @@
                     </tbody>
                   </table>
                 </div>
-                <div
-                  id="max-temp-2018-chart-container"
-                  class="chart-container hidden"
-                >
+                <div id="max-temp-2018-chart-container" class="chart-container">
                   <canvas id="max-temp-2018-chart" class="chart"></canvas>
                 </div>
-                <div id="max-temp-2018-table" class="chart-data hidden">
+                <div id="max-temp-2018-table" class="chart-data">
                   <table class="months-table">
                     <thead>
                       <tr>
@@ -409,11 +408,11 @@
                 </div>
                 <div
                   id="precipitation-2018-chart-container"
-                  class="chart-container hidden"
+                  class="chart-container"
                 >
                   <canvas id="precipitation-2018-chart" class="chart"></canvas>
                 </div>
-                <div id="precipitation-2018-table" class="chart-data hidden">
+                <div id="precipitation-2018-table" class="chart-data">
                   <table class="months-table">
                     <thead>
                       <tr>
@@ -474,6 +473,7 @@
                   </table>
                 </div>
               </div>
+
               <div id="weather-data-container-2019" class="data-grid hidden">
                 <div id="min-temp-2019-chart-container" class="chart-container">
                   <canvas id="min-temp-2019-chart" class="chart"></canvas>
@@ -538,13 +538,10 @@
                     </tbody>
                   </table>
                 </div>
-                <div
-                  id="max-temp-2019-chart-container"
-                  class="chart-container hidden"
-                >
+                <div id="max-temp-2019-chart-container" class="chart-container">
                   <canvas id="max-temp-2019-chart" class="chart"></canvas>
                 </div>
-                <div id="max-temp-2019-table" class="chart-data hidden">
+                <div id="max-temp-2019-table" class="chart-data">
                   <table class="months-table">
                     <thead>
                       <tr>
@@ -555,62 +552,62 @@
                     <tbody>
                       <tr>
                         <td>January</td>
-                        <td>4</td>
+                        <td>17</td>
                       </tr>
                       <tr>
                         <td>February</td>
-                        <td>4</td>
-                      </tr>
-                      <tr>
-                        <td>March</td>
-                        <td>9</td>
-                      </tr>
-                      <tr>
-                        <td>April</td>
-                        <td>9</td>
-                      </tr>
-                      <tr>
-                        <td>May</td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td>June</td>
-                        <td>15</td>
-                      </tr>
-                      <tr>
-                        <td>July</td>
-                        <td>21</td>
-                      </tr>
-                      <tr>
-                        <td>August</td>
-                        <td>22</td>
-                      </tr>
-                      <tr>
-                        <td>September</td>
                         <td>19</td>
                       </tr>
                       <tr>
+                        <td>March</td>
+                        <td>21</td>
+                      </tr>
+                      <tr>
+                        <td>April</td>
+                        <td>28</td>
+                      </tr>
+                      <tr>
+                        <td>May</td>
+                        <td>26</td>
+                      </tr>
+                      <tr>
+                        <td>June</td>
+                        <td>37</td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>39</td>
+                      </tr>
+                      <tr>
+                        <td>August</td>
+                        <td>35</td>
+                      </tr>
+                      <tr>
+                        <td>September</td>
+                        <td>31</td>
+                      </tr>
+                      <tr>
                         <td>October</td>
-                        <td>16</td>
+                        <td>29</td>
                       </tr>
                       <tr>
                         <td>November</td>
-                        <td>10</td>
+                        <td>25</td>
                       </tr>
                       <tr>
                         <td>December</td>
-                        <td>7</td>
+                        <td>22</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <div
                   id="precipitation-2019-chart-container"
-                  class="chart-container hidden"
+                  class="chart-container"
                 >
                   <canvas id="precipitation-2019-chart" class="chart"></canvas>
                 </div>
-                <div id="precipitation-2019-table" class="chart-data hidden">
+                <div id="precipitation-2019-table" class="chart-data">
                   <table class="months-table">
                     <thead>
                       <tr>
@@ -621,60 +618,251 @@
                     <tbody>
                       <tr>
                         <td>January</td>
-                        <td>0.5</td>
+                        <td>64.9</td>
                       </tr>
                       <tr>
                         <td>February</td>
-                        <td>135.2</td>
+                        <td>39.1</td>
                       </tr>
                       <tr>
                         <td>March</td>
-                        <td>31.7</td>
+                        <td>56.8</td>
                       </tr>
                       <tr>
                         <td>April</td>
-                        <td>34.2</td>
+                        <td>27.5</td>
                       </tr>
                       <tr>
                         <td>May</td>
-                        <td>4.1</td>
+                        <td>21.1</td>
                       </tr>
                       <tr>
                         <td>June</td>
-                        <td>10.3</td>
-                      </tr>
-                      <tr>
-                        <td>July</td>
                         <td>0</td>
                       </tr>
                       <tr>
+                        <td>July</td>
+                        <td>1.3</td>
+                      </tr>
+                      <tr>
                         <td>August</td>
-                        <td>22.1</td>
+                        <td>0.2</td>
                       </tr>
                       <tr>
                         <td>September</td>
-                        <td>5</td>
+                        <td>78.4</td>
                       </tr>
                       <tr>
                         <td>October</td>
-                        <td>217.8</td>
+                        <td>106</td>
                       </tr>
                       <tr>
                         <td>November</td>
-                        <td>54.5</td>
+                        <td>129.3</td>
                       </tr>
                       <tr>
                         <td>December</td>
-                        <td>17</td>
+                        <td>34.6</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
+
               <div id="weather-data-container-2020" class="data-grid hidden">
-                2020
+                <div id="min-temp-2020-chart-container" class="chart-container">
+                  <canvas id="min-temp-2020-chart" class="chart"></canvas>
+                </div>
+                <div id="min-temp-2020-table" class="chart-data">
+                  <table class="months-table">
+                    <thead>
+                      <tr>
+                        <td>Month</td>
+                        <td>&deg;C</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>January</td>
+                        <td>5</td>
+                      </tr>
+                      <tr>
+                        <td>February</td>
+                        <td>6</td>
+                      </tr>
+                      <tr>
+                        <td>March</td>
+                        <td>8</td>
+                      </tr>
+                      <tr>
+                        <td>April</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>May</td>
+                        <td>13</td>
+                      </tr>
+                      <tr>
+                        <td>June</td>
+                        <td>16</td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>21</td>
+                      </tr>
+                      <tr>
+                        <td>August</td>
+                        <td>23</td>
+                      </tr>
+                      <tr>
+                        <td>September</td>
+                        <td>18</td>
+                      </tr>
+                      <tr>
+                        <td>October</td>
+                        <td>13</td>
+                      </tr>
+                      <tr>
+                        <td>November</td>
+                        <td>12</td>
+                      </tr>
+                      <tr>
+                        <td>December</td>
+                        <td>9</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="max-temp-2020-chart-container" class="chart-container">
+                  <canvas id="max-temp-2020-chart" class="chart"></canvas>
+                </div>
+                <div id="max-temp-2020-table" class="chart-data">
+                  <table class="months-table">
+                    <thead>
+                      <tr>
+                        <td>Month</td>
+                        <td>&deg;C</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>January</td>
+                        <td>18</td>
+                      </tr>
+                      <tr>
+                        <td>February</td>
+                        <td>19</td>
+                      </tr>
+                      <tr>
+                        <td>March</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <td>April</td>
+                        <td>25</td>
+                      </tr>
+                      <tr>
+                        <td>May</td>
+                        <td>32</td>
+                      </tr>
+                      <tr>
+                        <td>June</td>
+                        <td>32</td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>36</td>
+                      </tr>
+                      <tr>
+                        <td>August</td>
+                        <td>38</td>
+                      </tr>
+                      <tr>
+                        <td>September</td>
+                        <td>32</td>
+                      </tr>
+                      <tr>
+                        <td>October</td>
+                        <td>30</td>
+                      </tr>
+                      <tr>
+                        <td>November</td>
+                        <td>24</td>
+                      </tr>
+                      <tr>
+                        <td>December</td>
+                        <td>21</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div
+                  id="precipitation-2020-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-2020-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-2020-table" class="chart-data">
+                  <table class="months-table">
+                    <thead>
+                      <tr>
+                        <td>Month</td>
+                        <td>mm</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>January</td>
+                        <td>8.9</td>
+                      </tr>
+                      <tr>
+                        <td>February</td>
+                        <td>0.5</td>
+                      </tr>
+                      <tr>
+                        <td>March</td>
+                        <td>33.2</td>
+                      </tr>
+                      <tr>
+                        <td>April</td>
+                        <td>8.2</td>
+                      </tr>
+                      <tr>
+                        <td>May</td>
+                        <td>6.6</td>
+                      </tr>
+                      <tr>
+                        <td>June</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>0.3</td>
+                      </tr>
+                      <tr>
+                        <td>August</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>September</td>
+                        <td>133.7</td>
+                      </tr>
+                      <tr>
+                        <td>October</td>
+                        <td>32.5</td>
+                      </tr>
+                      <tr>
+                        <td>November</td>
+                        <td>86.6</td>
+                      </tr>
+                      <tr>
+                        <td>December</td>
+                        <td>94.1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div id="default-el" class="data-grid hidden">Default</div>
             </div>
             <div id="data-comparison-page" class="data-page hidden">
               <p class="data-title">Data Comparison</p>

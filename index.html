@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="container">
-      <section class="page-1">
+      <section class="page-1 hidden">
         <div class="left">
           <h1>Login</h1>
           <div class="login-form-container">
@@ -191,7 +191,7 @@
           </div>
         </div>
       </section>
-      <section class="page-3 hidden">
+      <section class="page-3">
         <div class="top-bar">
           <div class="logo-container-top">
             <svg
@@ -253,22 +253,35 @@
                 <label for="year">Year</label>
                 <select name="year" id="weather-data-year-select">
                   <option value="2018">2018</option>
-                  <option value="2018">2019</option>
-                  <option value="2018">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
                 </select>
-                <input type="checkbox" name="min-temp" />
+                <input
+                  type="checkbox"
+                  name="min-temp"
+                  id="weather-data-min-temp-checkbox"
+                  checked
+                />
                 <label for="min-temp">Minimum Temperature</label>
-                <input type="checkbox" name="max-temp" />
+                <input
+                  type="checkbox"
+                  name="max-temp"
+                  id="weather-data-max-temp-checkbox"
+                />
                 <label for="max-temp">Maximum Temperature</label>
-                <input type="checkbox" name="precipitation" />
+                <input
+                  type="checkbox"
+                  name="precipitation"
+                  id="weather-data-precipitation-checkbox"
+                />
                 <label for="precipitation">Precipitation</label>
               </div>
 
-              <div id="weather-data-container" class="data-grid">
-                <div class="chart-container">
-                  <canvas id="min-temp-2018" class="chart"></canvas>
+              <div id="weather-data-container-2018" class="data-grid">
+                <div id="min-temp-2018-chart-container" class="chart-container">
+                  <canvas id="min-temp-2018-chart" class="chart"></canvas>
                 </div>
-                <div class="chart-data">
+                <div id="min-temp-2018-table" class="chart-data">
                   <table class="months-table">
                     <thead>
                       <tr>
@@ -328,10 +341,13 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="chart-container">
-                  <canvas id="max-temp-2018" class="chart"></canvas>
+                <div
+                  id="max-temp-2018-chart-container"
+                  class="chart-container hidden"
+                >
+                  <canvas id="max-temp-2018-chart" class="chart"></canvas>
                 </div>
-                <div class="chart-data">
+                <div id="max-temp-2018-table" class="chart-data hidden">
                   <table class="months-table">
                     <thead>
                       <tr>
@@ -391,10 +407,13 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="chart-container">
-                  <canvas id="rainfall-2018" class="chart"></canvas>
+                <div
+                  id="precipitation-2018-chart-container"
+                  class="chart-container hidden"
+                >
+                  <canvas id="precipitation-2018-chart" class="chart"></canvas>
                 </div>
-                <div class="chart-data">
+                <div id="precipitation-2018-table" class="chart-data hidden">
                   <table class="months-table">
                     <thead>
                       <tr>
@@ -455,21 +474,263 @@
                   </table>
                 </div>
               </div>
-            </div>
-            <div id="data-comparison-page" class="datapage hidden">
-              <div id="data-comparison-container" class="data-grid">
-                data-comparison-container
+              <div id="weather-data-container-2019" class="data-grid hidden">
+                <div id="min-temp-2019-chart-container" class="chart-container">
+                  <canvas id="min-temp-2019-chart" class="chart"></canvas>
+                </div>
+                <div id="min-temp-2019-table" class="chart-data">
+                  <table class="months-table">
+                    <thead>
+                      <tr>
+                        <td>Month</td>
+                        <td>&deg;C</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>January</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>February</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>March</td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>April</td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>May</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>June</td>
+                        <td>15</td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>21</td>
+                      </tr>
+                      <tr>
+                        <td>August</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <td>September</td>
+                        <td>19</td>
+                      </tr>
+                      <tr>
+                        <td>October</td>
+                        <td>16</td>
+                      </tr>
+                      <tr>
+                        <td>November</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>December</td>
+                        <td>7</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div
+                  id="max-temp-2019-chart-container"
+                  class="chart-container hidden"
+                >
+                  <canvas id="max-temp-2019-chart" class="chart"></canvas>
+                </div>
+                <div id="max-temp-2019-table" class="chart-data hidden">
+                  <table class="months-table">
+                    <thead>
+                      <tr>
+                        <td>Month</td>
+                        <td>&deg;C</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>January</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>February</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>March</td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>April</td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>May</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>June</td>
+                        <td>15</td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>21</td>
+                      </tr>
+                      <tr>
+                        <td>August</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <td>September</td>
+                        <td>19</td>
+                      </tr>
+                      <tr>
+                        <td>October</td>
+                        <td>16</td>
+                      </tr>
+                      <tr>
+                        <td>November</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>December</td>
+                        <td>7</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div
+                  id="precipitation-2019-chart-container"
+                  class="chart-container hidden"
+                >
+                  <canvas id="precipitation-2019-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-2019-table" class="chart-data hidden">
+                  <table class="months-table">
+                    <thead>
+                      <tr>
+                        <td>Month</td>
+                        <td>mm</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>January</td>
+                        <td>0.5</td>
+                      </tr>
+                      <tr>
+                        <td>February</td>
+                        <td>135.2</td>
+                      </tr>
+                      <tr>
+                        <td>March</td>
+                        <td>31.7</td>
+                      </tr>
+                      <tr>
+                        <td>April</td>
+                        <td>34.2</td>
+                      </tr>
+                      <tr>
+                        <td>May</td>
+                        <td>4.1</td>
+                      </tr>
+                      <tr>
+                        <td>June</td>
+                        <td>10.3</td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>August</td>
+                        <td>22.1</td>
+                      </tr>
+                      <tr>
+                        <td>September</td>
+                        <td>5</td>
+                      </tr>
+                      <tr>
+                        <td>October</td>
+                        <td>217.8</td>
+                      </tr>
+                      <tr>
+                        <td>November</td>
+                        <td>54.5</td>
+                      </tr>
+                      <tr>
+                        <td>December</td>
+                        <td>17</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
+              <div id="weather-data-container-2020" class="data-grid hidden">
+                2020
+              </div>
+              <div id="default-el" class="data-grid hidden">Default</div>
             </div>
-            <div id="monthly-comparison-page" class="datapage hidden">
+            <div id="data-comparison-page" class="data-page hidden">
+              <p class="data-title">Data Comparison</p>
+              <div class="filter-div">
+                <label for="year">Year</label>
+                <select name="year" id="data-comparison-year-select">
+                  <option value="2018">2018</option>
+                  <option value="2018">2019</option>
+                  <option value="2018">2020</option>
+                </select>
+                <input type="checkbox" name="min-temp" />
+                <label for="min-temp">Minimum Temperature</label>
+                <input type="checkbox" name="max-temp" />
+                <label for="max-temp">Maximum Temperature</label>
+                <input type="checkbox" name="precipitation" />
+                <label for="precipitation">Precipitation</label>
+              </div>
+              <div id="data-comparison-container" class="data-grid">GRID</div>
+            </div>
+            <div id="monthly-comparison-page" class="data-page hidden">
+              <p class="data-title">Monthly Comparison</p>
+              <div class="filter-div">
+                <label for="year">Year</label>
+                <select name="year" id="monthly-comparison-year-select">
+                  <option value="2018">2018</option>
+                  <option value="2018">2019</option>
+                  <option value="2018">2020</option>
+                </select>
+                <input type="checkbox" name="min-temp" />
+                <label for="min-temp">Minimum Temperature</label>
+                <input type="checkbox" name="max-temp" />
+                <label for="max-temp">Maximum Temperature</label>
+                <input type="checkbox" name="precipitation" />
+                <label for="precipitation">Precipitation</label>
+              </div>
               <div id="monthly-comparison-container" class="data-grid">
-                monthly-comparison-container
+                GRID
               </div>
             </div>
-            <div id="energy-comparison-page" class="datapage hidden">
-              <div id="energy-comparison-container" class="data-grid">
-                energy-comparison-container
+            <div id="energy-comparison-page" class="data-page hidden">
+              <p class="data-title">Energy Comparison</p>
+              <div class="filter-div">
+                <label for="year">Year</label>
+                <select name="year" id="energy-comparison-year-select">
+                  <option value="2018">2018</option>
+                  <option value="2018">2019</option>
+                  <option value="2018">2020</option>
+                </select>
+                <input type="checkbox" name="min-temp" />
+                <label for="min-temp">Minimum Temperature</label>
+                <input type="checkbox" name="max-temp" />
+                <label for="max-temp">Maximum Temperature</label>
+                <input type="checkbox" name="precipitation" />
+                <label for="precipitation">Precipitation</label>
               </div>
+              <div id="energy-comparison-container" class="data-grid">GRID</div>
             </div>
           </div>
         </div>

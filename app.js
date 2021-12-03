@@ -147,6 +147,101 @@ const checkBoxes2020 = {
   precipitation: true,
 };
 
+const monthlyComparisonMonthSelect = document.getElementById(
+  "monthly-comparison-month-select"
+);
+
+const janComparisonContainer = document.getElementById(
+  "jan-comparison-container"
+);
+
+const febComparisonContainer = document.getElementById(
+  "feb-comparison-container"
+);
+
+const marComparisonContainer = document.getElementById(
+  "mar-comparison-container"
+);
+
+const aprComparisonContainer = document.getElementById(
+  "apr-comparison-container"
+);
+
+const mayComparisonContainer = document.getElementById(
+  "may-comparison-container"
+);
+
+const junComparisonContainer = document.getElementById(
+  "jun-comparison-container"
+);
+
+const julComparisonContainer = document.getElementById(
+  "jul-comparison-container"
+);
+
+const augComparisonContainer = document.getElementById(
+  "aug-comparison-container"
+);
+
+const sepComparisonContainer = document.getElementById(
+  "sep-comparison-container"
+);
+
+const octComparisonContainer = document.getElementById(
+  "oct-comparison-container"
+);
+
+const novComparisonContainer = document.getElementById(
+  "nov-comparison-container"
+);
+
+const decComparisonContainer = document.getElementById(
+  "dec-comparison-container"
+);
+
+const dataComparisonMonthArr = [
+  janComparisonContainer,
+  febComparisonContainer,
+  marComparisonContainer,
+  aprComparisonContainer,
+  mayComparisonContainer,
+  junComparisonContainer,
+  julComparisonContainer,
+  augComparisonContainer,
+  sepComparisonContainer,
+  octComparisonContainer,
+  novComparisonContainer,
+  decComparisonContainer,
+];
+
+monthlyComparisonMonthSelect.addEventListener("change", () => {
+  if (monthlyComparisonMonthSelect.value == "jan") {
+    showEl(janComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "feb") {
+    showEl(febComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "mar") {
+    showEl(marComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "apr") {
+    showEl(aprComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "may") {
+    showEl(mayComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "jun") {
+    showEl(junComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "jul") {
+    showEl(julComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "aug") {
+    showEl(augComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "sep") {
+    showEl(sepComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "oct") {
+    showEl(octComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "nov") {
+    showEl(novComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "dec") {
+    showEl(decComparisonContainer, dataComparisonMonthArr);
+  }
+});
+
 weatherDataYearSelect.addEventListener("change", () => {
   if (weatherDataYearSelect.value == "2018") {
     showEl(weatherDataContainer2018, weatherDataYearArr);
@@ -502,6 +597,198 @@ const precipitationDCChartContainer = document.getElementById(
 const minTempDCTable = document.getElementById("min-temp-DC-table");
 const maxTempDCTable = document.getElementById("max-temp-DC-table");
 const precipitationDCTable = document.getElementById("precipitation-DC-table");
+
+const tempJanChart = document
+  .getElementById("min-temp-jan-chart")
+  .getContext("2d");
+
+const tempJanChartContainer = document.getElementById(
+  "min-temp-jan-chart-container"
+);
+
+const precipitationJanChart = document
+  .getElementById("precipitation-jan-chart")
+  .getContext("2d");
+
+const precipitationJanChartContainer = document.getElementById(
+  "precipitation-jan-chart-container"
+);
+
+const tempFebChart = document
+  .getElementById("min-temp-feb-chart")
+  .getContext("2d");
+
+const tempFebChartContainer = document.getElementById(
+  "min-temp-feb-chart-container"
+);
+
+const precipitationFebChart = document
+  .getElementById("precipitation-feb-chart")
+  .getContext("2d");
+
+const precipitationFebChartContainer = document.getElementById(
+  "precipitation-feb-chart-container"
+);
+
+const tempMarChart = document
+  .getElementById("min-temp-mar-chart")
+  .getContext("2d");
+
+const tempMarChartContainer = document.getElementById(
+  "min-temp-mar-chart-container"
+);
+
+const precipitationMarChart = document
+  .getElementById("precipitation-mar-chart")
+  .getContext("2d");
+
+const precipitationMarChartContainer = document.getElementById(
+  "precipitation-mar-chart-container"
+);
+
+const tempAprChart = document
+  .getElementById("min-temp-apr-chart")
+  .getContext("2d");
+
+const tempAprChartContainer = document.getElementById(
+  "min-temp-apr-chart-container"
+);
+
+const precipitationAprChart = document
+  .getElementById("precipitation-apr-chart")
+  .getContext("2d");
+
+const precipitationAprChartContainer = document.getElementById(
+  "precipitation-apr-chart-container"
+);
+
+const tempMayChart = document
+  .getElementById("min-temp-may-chart")
+  .getContext("2d");
+
+const tempMayChartContainer = document.getElementById(
+  "min-temp-may-chart-container"
+);
+
+const precipitationMayChart = document
+  .getElementById("precipitation-may-chart")
+  .getContext("2d");
+
+const precipitationMayChartContainer = document.getElementById(
+  "precipitation-may-chart-container"
+);
+
+const tempJunChart = document
+  .getElementById("min-temp-jun-chart")
+  .getContext("2d");
+
+const tempJunChartContainer = document.getElementById(
+  "min-temp-jun-chart-container"
+);
+
+const precipitationJunChart = document
+  .getElementById("precipitation-jun-chart")
+  .getContext("2d");
+
+const precipitationJunChartContainer = document.getElementById(
+  "precipitation-jun-chart-container"
+);
+
+const tempJulChart = document
+  .getElementById("min-temp-jul-chart")
+  .getContext("2d");
+
+const tempJulChartContainer = document.getElementById(
+  "min-temp-jul-chart-container"
+);
+
+const precipitationJulChart = document
+  .getElementById("precipitation-jul-chart")
+  .getContext("2d");
+
+const precipitationJulChartContainer = document.getElementById(
+  "precipitation-jul-chart-container"
+);
+
+const tempAugChart = document
+  .getElementById("min-temp-aug-chart")
+  .getContext("2d");
+
+const tempAugChartContainer = document.getElementById(
+  "min-temp-aug-chart-container"
+);
+
+const precipitationAugChart = document
+  .getElementById("precipitation-aug-chart")
+  .getContext("2d");
+
+const precipitationAugChartContainer = document.getElementById(
+  "precipitation-aug-chart-container"
+);
+
+const tempSepChart = document
+  .getElementById("min-temp-sep-chart")
+  .getContext("2d");
+
+const tempSepChartContainer = document.getElementById(
+  "min-temp-sep-chart-container"
+);
+
+const precipitationSepChart = document
+  .getElementById("precipitation-sep-chart")
+  .getContext("2d");
+
+const precipitationSepChartContainer = document.getElementById(
+  "precipitation-sep-chart-container"
+);
+
+const tempOctChart = document
+  .getElementById("min-temp-oct-chart")
+  .getContext("2d");
+
+const tempOctChartContainer = document.getElementById(
+  "min-temp-oct-chart-container"
+);
+
+const precipitationOctChart = document
+  .getElementById("precipitation-oct-chart")
+  .getContext("2d");
+
+const precipitationOctChartContainer = document.getElementById(
+  "precipitation-oct-chart-container"
+);
+
+const tempNovChart = document
+  .getElementById("min-temp-nov-chart")
+  .getContext("2d");
+
+const tempNovChartContainer = document.getElementById(
+  "min-temp-nov-chart-container"
+);
+
+const precipitationNovChart = document
+  .getElementById("precipitation-nov-chart")
+  .getContext("2d");
+
+const precipitationNovChartContainer = document.getElementById(
+  "precipitation-nov-chart-container"
+);
+
+const tempDecChart = document
+  .getElementById("min-temp-dec-chart")
+  .getContext("2d");
+
+const tempDecChartContainer = document.getElementById(
+  "min-temp-dec-chart-container"
+);
+
+const precipitationDecChart = document
+  .getElementById("precipitation-dec-chart")
+  .getContext("2d");
+
+const precipitationDecChartContainer = document.getElementById(
+  "precipitation-dec-chart-container"
+);
 
 let minTemp2018JS = new Chart(minTemp2018Chart, {
   type: "bar",
@@ -1194,6 +1481,1506 @@ let precipitationDCJS = new Chart(precipitationDCChart, {
       },
       line: {
         tension: 0.15,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempJanJS = new Chart(tempJanChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[0], maxTemp2018Arr[0]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[0], maxTemp2020Arr[0]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempJanJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempJanJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "January of 2018 and 2020",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationJanJS = new Chart(precipitationJanChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[0]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[0]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationJanJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationJanJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "January of 2018 and 2020",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempFebJS = new Chart(tempFebChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[1], maxTemp2018Arr[1]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[1], maxTemp2020Arr[1]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempFebJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempFebJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationFebJS = new Chart(precipitationFebChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[1]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[1]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationFebJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationFebJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempMarJS = new Chart(tempMarChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[2], maxTemp2018Arr[2]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[2], maxTemp2020Arr[2]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempMarJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempMarJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationMarJS = new Chart(precipitationMarChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[2]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[2]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationMarJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationMarJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempAprJS = new Chart(tempAprChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[3], maxTemp2018Arr[3]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[3], maxTemp2020Arr[3]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempAprJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempAprJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationAprJS = new Chart(precipitationAprChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[3]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[3]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationAprJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationAprJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempMayJS = new Chart(tempMayChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[4], maxTemp2018Arr[4]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[4], maxTemp2020Arr[4]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempMayJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempMayJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationMayJS = new Chart(precipitationMayChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[4]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[4]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationMayJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationMayJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempJunJS = new Chart(tempJunChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[5], maxTemp2018Arr[5]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[5], maxTemp2020Arr[5]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempJunJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempJunJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationJunJS = new Chart(precipitationJunChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[5]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[5]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationJunJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationJunJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempJulJS = new Chart(tempJulChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[6], maxTemp2018Arr[6]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[6], maxTemp2020Arr[6]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempJulJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempJulJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationJulJS = new Chart(precipitationJulChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[6]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[6]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationJulJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationJulJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempAugJS = new Chart(tempAugChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[7], maxTemp2018Arr[7]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[7], maxTemp2020Arr[7]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempAugJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempAugJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationAugJS = new Chart(precipitationAugChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[7]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[7]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationAugJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationAugJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempSepJS = new Chart(tempSepChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[8], maxTemp2018Arr[8]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[8], maxTemp2020Arr[8]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempSepJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempSepJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationSepJS = new Chart(precipitationSepChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[8]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[8]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationSepJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationSepJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempOctJS = new Chart(tempOctChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[9], maxTemp2018Arr[9]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[9], maxTemp2020Arr[9]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempOctJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempOctJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationOctJS = new Chart(precipitationOctChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[9]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[9]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationOctJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationOctJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempNovJS = new Chart(tempNovChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[10], maxTemp2018Arr[10]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[10], maxTemp2020Arr[10]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempNovJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempNovJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationNovJS = new Chart(precipitationNovChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[10]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[10]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationNovJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationNovJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let tempDecJS = new Chart(tempDecChart, {
+  type: "bar",
+  data: {
+    labels: ["Minimum Temperature", "Maximum Temperature"],
+    datasets: [
+      {
+        label: "2018",
+        data: [minTemp2018Arr[11], maxTemp2018Arr[11]],
+        backgroundColor: [colours.blueLight, colours.orangeMid],
+      },
+      {
+        label: "2020",
+        data: [minTemp2020Arr[11], maxTemp2020Arr[11]],
+        backgroundColor: [colours.blueDark, colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label = tempDecJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              tempDecJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Degrees Celsius",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let precipitationDecJS = new Chart(precipitationDecChart, {
+  type: "bar",
+  data: {
+    labels: ["Precipitation"],
+    datasets: [
+      {
+        label: "2018",
+        data: [precipitation2018Arr[11]],
+        backgroundColor: [colours.blueLight],
+      },
+      {
+        label: "2020",
+        data: [precipitation2020Arr[11]],
+        backgroundColor: [colours.blueDark],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitationDecJS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitationDecJS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+            return label + ": " + value + "mm";
+          },
+        },
+      },
+      title: {
+        text: "February",
+        display: true,
+      },
+      legend: {
+        display: false,
       },
     },
     scales: {

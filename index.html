@@ -1118,21 +1118,715 @@
             <div id="monthly-comparison-page" class="data-page">
               <p class="data-title">Monthly Comparison</p>
               <div class="filter-div">
-                <label for="year">Year</label>
-                <select name="year" id="monthly-comparison-year-select">
-                  <option value="2018">2018</option>
-                  <option value="2018">2019</option>
-                  <option value="2018">2020</option>
+                <label for="year">Month</label>
+                <select name="year" id="monthly-comparison-month-select">
+                  <option value="jan">January</option>
+                  <option value="feb">February</option>
+                  <option value="mar">March</option>
+                  <option value="apr">April</option>
+                  <option value="may">May</option>
+                  <option value="jun">June</option>
+                  <option value="jul">July</option>
+                  <option value="aug">August</option>
+                  <option value="sep">September</option>
+                  <option value="oct">October</option>
+                  <option value="nov">November</option>
+                  <option value="dec">December</option>
                 </select>
-                <input type="checkbox" name="min-temp" />
+                <!-- <input
+                  type="checkbox"
+                  name="min-temp"
+                  id="monthly-comparison-temp-checkbox"
+                  checked
+                />
                 <label for="min-temp">Minimum Temperature</label>
-                <input type="checkbox" name="max-temp" />
-                <label for="max-temp">Maximum Temperature</label>
-                <input type="checkbox" name="precipitation" />
-                <label for="precipitation">Rainfall</label>
+                <input
+                  type="checkbox"
+                  name="precipitation"
+                  id="monthly-comparison-precipitation-checkbox"
+                  checked
+                />
+                <label for="precipitation">Rainfall</label> -->
               </div>
-              <div id="monthly-comparison-container" class="data-grid">
-                GRID
+              <div id="jan-comparison-container" class="data-grid">
+                <div id="min-temp-jan-chart-container" class="chart-container">
+                  <canvas id="min-temp-jan-chart" class="chart"></canvas>
+                </div>
+                <div id="temp-jan-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>January</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>8 &deg;C</td>
+                        <td>5 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>19 &deg;C</td>
+                        <td>18 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div
+                  id="precipitation-jan-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-jan-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-jan-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>January</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>0.5 mm</td>
+                        <td>8.9 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="feb-comparison-container" class="data-grid hidden">
+                <div id="min-temp-feb-chart-container" class="chart-container">
+                  <canvas id="min-temp-feb-chart" class="chart"></canvas>
+                </div>
+                <div id="temp-feb-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>February</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>7 &deg;C</td>
+                        <td>6 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>18 &deg;C</td>
+                        <td>19 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-feb-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-feb-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-feb-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>February</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>135.2 mm</td>
+                        <td>0.5 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="mar-comparison-container" class="data-grid hidden">
+                <div id="min-temp-mar-chart-container" class="chart-container">
+                  <canvas id="min-temp-mar-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-mar-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>March</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>9 &deg;C</td>
+                        <td>8 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>18 &deg;C</td>
+                        <td>19 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-mar-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-mar-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-mar-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>March</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>31.7 mm</td>
+                        <td>33.2 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="apr-comparison-container" class="data-grid hidden">
+                <div id="min-temp-apr-chart-container" class="chart-container">
+                  <canvas id="min-temp-apr-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-apr-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>April</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>10 &deg;C</td>
+                        <td>10 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>26 &deg;C</td>
+                        <td>25 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-apr-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-apr-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-apr-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>April</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>34.2 mm</td>
+                        <td>8.2 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="may-comparison-container" class="data-grid hidden">
+                <div id="min-temp-may-chart-container" class="chart-container">
+                  <canvas id="min-temp-may-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-may-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>May</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>13 &deg;C</td>
+                        <td>13 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>28 &deg;C</td>
+                        <td>32 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-may-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-may-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-may-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>May</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>4.1 mm</td>
+                        <td>6.6 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="jun-comparison-container" class="data-grid hidden">
+                <div id="min-temp-jun-chart-container" class="chart-container">
+                  <canvas id="min-temp-jun-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-jun-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>June</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>17 &deg;C</td>
+                        <td>16 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>31 &deg;C</td>
+                        <td>32 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-jun-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-jun-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-jun-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>June</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>10.3 mm</td>
+                        <td>0 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="jul-comparison-container" class="data-grid hidden">
+                <div id="min-temp-jul-chart-container" class="chart-container">
+                  <canvas id="min-temp-jul-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-jul-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>July</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>20 &deg;C</td>
+                        <td>21 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>35 &deg;C</td>
+                        <td>36 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-jul-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-jul-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-jul-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>July</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>0 mm</td>
+                        <td>0.3 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="aug-comparison-container" class="data-grid hidden">
+                <div id="min-temp-aug-chart-container" class="chart-container">
+                  <canvas id="min-temp-aug-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-aug-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>August</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>21 &deg;C</td>
+                        <td>23 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>33 &deg;C</td>
+                        <td>38 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-aug-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-aug-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-aug-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>August</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>22.1 mm</td>
+                        <td>0 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="sep-comparison-container" class="data-grid hidden">
+                <div id="min-temp-sep-chart-container" class="chart-container">
+                  <canvas id="min-temp-sep-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-sep-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>September</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>18 &deg;C</td>
+                        <td>18 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>35 &deg;C</td>
+                        <td>32 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-sep-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-sep-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-sep-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>September</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>5 mm</td>
+                        <td>133.7 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="oct-comparison-container" class="data-grid hidden">
+                <div id="min-temp-oct-chart-container" class="chart-container">
+                  <canvas id="min-temp-oct-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-oct-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>October</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>14 &deg;C</td>
+                        <td>13 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>27 &deg;C</td>
+                        <td>30 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-oct-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-oct-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-oct-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>October</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>217.8 mm</td>
+                        <td>32.5 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="nov-comparison-container" class="data-grid hidden">
+                <div id="min-temp-nov-chart-container" class="chart-container">
+                  <canvas id="min-temp-nov-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-nov-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>November</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>12 &deg;C</td>
+                        <td>12 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>24 &deg;C</td>
+                        <td>24 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-nov-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-nov-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-nov-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>November</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>54.5 mm</td>
+                        <td>86.6 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div id="dec-comparison-container" class="data-grid hidden">
+                <div id="min-temp-dec-chart-container" class="chart-container">
+                  <canvas id="min-temp-dec-chart" class="chart"></canvas>
+                </div>
+
+                <div id="temp-dec-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>December</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Min</td>
+                        <td>6 &deg;C</td>
+                        <td>9 &deg;C</td>
+                      </tr>
+                      <tr>
+                        <td>Max</td>
+                        <td>19 &deg;C</td>
+                        <td>21 &deg;C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div
+                  id="precipitation-dec-chart-container"
+                  class="chart-container"
+                >
+                  <canvas id="precipitation-dec-chart" class="chart"></canvas>
+                </div>
+                <div id="precipitation-dec-table" class="chart-data">
+                  <table class="months-table">
+                    <!-- <p class="months-table-title">Min Temp</p> -->
+                    <thead>
+                      <tr>
+                        <td>December</td>
+                        <td>2018</td>
+                        <td>2020</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Precipitation</td>
+                        <td>17 mm</td>
+                        <td>94.1 mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
 

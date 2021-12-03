@@ -238,6 +238,13 @@ const dataComparisonMonthArr = [
   decComparisonContainer,
 ];
 
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenuPage = document.getElementById("mobile-menu-page");
+
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenuPage.classList.toggle("hidden");
+});
+
 monthlyComparisonMonthSelect.addEventListener("change", () => {
   if (monthlyComparisonMonthSelect.value == "jan") {
     showEl(janComparisonContainer, dataComparisonMonthArr);
@@ -314,40 +321,6 @@ weatherDataMinTempCheckbox.addEventListener("change", () => {
     }
   }
 });
-
-// weatherDataMaxTempCheckbox.addEventListener("change", () => {
-//   if (weatherDataYearSelect.value == "2018") {
-//     if (weatherDataMaxTempCheckbox.checked) {
-//       checkBoxes2018.maxTemp = true;
-//       maxTemp2018ChartContainer.classList.remove("hidden");
-//       maxTemp2018Table.classList.remove("hidden");
-//     } else {
-//       checkBoxes2018.maxTemp = false;
-//       maxTemp2018ChartContainer.classList.add("hidden");
-//       maxTemp2018Table.classList.add("hidden");
-//     }
-//   } else if (weatherDataYearSelect.value == "2019") {
-//     if (weatherDataMaxTempCheckbox.checked) {
-//       checkBoxes2019.maxTemp = true;
-//       maxTemp2019ChartContainer.classList.remove("hidden");
-//       maxTemp2019Table.classList.remove("hidden");
-//     } else {
-//       checkBoxes2019.maxTemp = false;
-//       maxTemp2019ChartContainer.classList.add("hidden");
-//       maxTemp2019Table.classList.add("hidden");
-//     }
-//   } else if (weatherDataYearSelect.value == "2020") {
-//     if (weatherDataMaxTempCheckbox.checked) {
-//       checkBoxes2020.maxTemp = true;
-//       maxTemp2020ChartContainer.classList.remove("hidden");
-//       maxTemp2020Table.classList.remove("hidden");
-//     } else {
-//       checkBoxes2020.maxTemp = false;
-//       maxTemp2020ChartContainer.classList.add("hidden");
-//       maxTemp2020Table.classList.add("hidden");
-//     }
-//   }
-// });
 
 weatherDataPrecipitationCheckbox.addEventListener("change", () => {
   if (weatherDataYearSelect.value == "2018") {
@@ -498,9 +471,6 @@ const monthsArr = [
 const minTemp2018Chart = document
   .getElementById("min-temp-2018-chart")
   .getContext("2d");
-// const maxTemp2018Chart = document
-//   .getElementById("max-temp-2018-chart")
-//   .getContext("2d");
 const precipitation2018Chart = document
   .getElementById("precipitation-2018-chart")
   .getContext("2d");
@@ -508,9 +478,6 @@ const precipitation2018Chart = document
 const minTemp2018ChartContainer = document.getElementById(
   "min-temp-2018-chart-container"
 );
-// const maxTemp2018ChartContainer = document.getElementById(
-//   "max-temp-2018-chart-container"
-// );
 const precipitation2018ChartContainer = document.getElementById(
   "precipitation-2018-chart-container"
 );
@@ -542,18 +509,12 @@ const precipitation2018Arr = [
 const minTemp2019Chart = document
   .getElementById("min-temp-2019-chart")
   .getContext("2d");
-// const maxTemp2019Chart = document
-//   .getElementById("max-temp-2019-chart")
-//   .getContext("2d");
 const precipitation2019Chart = document
   .getElementById("precipitation-2019-chart")
   .getContext("2d");
 const minTemp2019ChartContainer = document.getElementById(
   "min-temp-2019-chart-container"
 );
-// const maxTemp2019ChartContainer = document.getElementById(
-//   "max-temp-2019-chart-container"
-// );
 const precipitation2019ChartContainer = document.getElementById(
   "precipitation-2019-chart-container"
 );
@@ -585,9 +546,6 @@ const precipitation2019Arr = [
 const minTemp2020Chart = document
   .getElementById("min-temp-2020-chart")
   .getContext("2d");
-// const maxTemp2020Chart = document
-//   .getElementById("max-temp-2020-chart")
-//   .getContext("2d");
 const precipitation2020Chart = document
   .getElementById("precipitation-2020-chart")
   .getContext("2d");
@@ -595,9 +553,6 @@ const precipitation2020Chart = document
 const minTemp2020ChartContainer = document.getElementById(
   "min-temp-2020-chart-container"
 );
-// const maxTemp2020ChartContainer = document.getElementById(
-//   "max-temp-2020-chart-container"
-// );
 const precipitation2020ChartContainer = document.getElementById(
   "precipitation-2020-chart-container"
 );
@@ -936,47 +891,6 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
   },
 });
 
-// let maxTemp2018JS = new Chart(maxTemp2018Chart, {
-//   type: "bar",
-//   data: {
-//     labels: monthsArr,
-//     datasets: [
-//       {
-//         data: maxTemp2018Arr,
-//         backgroundColor: [colours.red2],
-//       },
-//     ],
-//   },
-//   /* Use OPTIONS to create graph title, legend, and label axes. */
-//   options: {
-//     plugins: {
-//       title: {
-//         text: "Maximum Temperature 2018",
-//         display: true,
-//       },
-//       legend: {
-//         display: false,
-//       },
-//     },
-//     scales: {
-//       yAxes: {
-//         title: {
-//           display: true,
-//           text: "Degrees Celsius",
-//           font: {
-//             size: 15,
-//           },
-//         },
-//       },
-//       xAxes: {
-//         title: {
-//           display: false,
-//         },
-//       },
-//     },
-//   },
-// });
-
 let precipitation2018JS = new Chart(precipitation2018Chart, {
   type: "line",
   data: {
@@ -1016,7 +930,7 @@ let precipitation2018JS = new Chart(precipitation2018Chart, {
     },
     elements: {
       point: {
-        radius: 5,
+        radius: 3,
         backgroundColor: colours.orangeMid,
       },
       line: {
@@ -1114,47 +1028,6 @@ let minTemp2019JS = new Chart(minTemp2019Chart, {
   },
 });
 
-// let maxTemp2019JS = new Chart(maxTemp2019Chart, {
-//   type: "bar",
-//   data: {
-//     labels: monthsArr,
-//     datasets: [
-//       {
-//         data: maxTemp2019Arr,
-//         backgroundColor: [colours.red2],
-//       },
-//     ],
-//   },
-//   /* Use OPTIONS to create graph title, legend, and label axes. */
-//   options: {
-//     plugins: {
-//       title: {
-//         text: "Maximum Temperature 2019",
-//         display: true,
-//       },
-//       legend: {
-//         display: false,
-//       },
-//     },
-//     scales: {
-//       yAxes: {
-//         title: {
-//           display: true,
-//           text: "Degrees Celsius",
-//           font: {
-//             size: 15,
-//           },
-//         },
-//       },
-//       xAxes: {
-//         title: {
-//           display: false,
-//         },
-//       },
-//     },
-//   },
-// });
-
 let precipitation2019JS = new Chart(precipitation2019Chart, {
   type: "line",
   data: {
@@ -1193,7 +1066,7 @@ let precipitation2019JS = new Chart(precipitation2019Chart, {
     },
     elements: {
       point: {
-        radius: 5,
+        radius: 3,
         backgroundColor: colours.orangeMid,
       },
       line: {
@@ -1291,47 +1164,6 @@ let minTemp2020JS = new Chart(minTemp2020Chart, {
   },
 });
 
-// let maxTemp2020JS = new Chart(maxTemp2020Chart, {
-//   type: "bar",
-//   data: {
-//     labels: monthsArr,
-//     datasets: [
-//       {
-//         data: maxTemp2020Arr,
-//         backgroundColor: [colours.red2],
-//       },
-//     ],
-//   },
-//   /* Use OPTIONS to create graph title, legend, and label axes. */
-//   options: {
-//     plugins: {
-//       title: {
-//         text: "Maximum Temperature 2020",
-//         display: true,
-//       },
-//       legend: {
-//         display: false,
-//       },
-//     },
-//     scales: {
-//       yAxes: {
-//         title: {
-//           display: true,
-//           text: "Degrees Celsius",
-//           font: {
-//             size: 15,
-//           },
-//         },
-//       },
-//       xAxes: {
-//         title: {
-//           display: false,
-//         },
-//       },
-//     },
-//   },
-// });
-
 let precipitation2020JS = new Chart(precipitation2020Chart, {
   type: "line",
   data: {
@@ -1370,7 +1202,7 @@ let precipitation2020JS = new Chart(precipitation2020Chart, {
     },
     elements: {
       point: {
-        radius: 5,
+        radius: 3,
         backgroundColor: colours.orangeMid,
       },
       line: {
@@ -1445,7 +1277,7 @@ let minTempDCJS = new Chart(minTempDCChart, {
     },
     elements: {
       point: {
-        radius: 5,
+        radius: 3,
       },
       line: {
         tension: 0.15,
@@ -1519,7 +1351,7 @@ let maxTempDCJS = new Chart(maxTempDCChart, {
     },
     elements: {
       point: {
-        radius: 5,
+        radius: 3,
       },
       line: {
         tension: 0.15,
@@ -1593,7 +1425,7 @@ let precipitationDCJS = new Chart(precipitationDCChart, {
     },
     elements: {
       point: {
-        radius: 5,
+        radius: 3,
       },
       line: {
         tension: 0.15,
@@ -3167,7 +2999,7 @@ let energyComparisonChartJs = new Chart(energyComparisonChart, {
     },
     elements: {
       point: {
-        radius: 4,
+        radius: 3,
       },
       line: {
         tension: 0.15,
@@ -3190,11 +3022,4 @@ let energyComparisonChartJs = new Chart(energyComparisonChart, {
       },
     },
   },
-});
-
-const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-const mobileMenuPage = document.getElementById("mobile-menu-page");
-
-mobileMenuBtn.addEventListener("click", () => {
-  mobileMenuPage.classList.toggle("hidden");
 });

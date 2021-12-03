@@ -366,6 +366,41 @@ a {
   height: 93%;
 }
 
+.mobile-menu-btn {
+  font-size: 3rem;
+  cursor: pointer;
+  align-self: flex-start;
+  display: none !important;
+  margin-left: 2rem;
+}
+
+.mobile-menu-page {
+  background-color: var(--color-blue-darkest);
+  color: var(--color-grey-light);
+  min-height: 100vh;
+}
+
+.mobile-menu-page ul {
+  height: 80%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 3rem;
+  text-align: center;
+  padding: 3rem;
+  font-size: 2rem;
+}
+
+.mobile-menu-page ul li {
+  border: 1px solid white;
+  padding: 1rem 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .menu {
   min-width: 23.5rem;
   height: 100%;
@@ -475,7 +510,7 @@ a {
 .chart-container {
   grid-column: 2 / span 3;
   padding: 0 5rem;
-  min-width: 50rem;
+  min-width: 80rem;
 }
 
 .chart-data {
@@ -591,3 +626,74 @@ a {
     color: var(--color-blue-darkest);
   }
 } */
+
+@media only screen and (min-width: 1301px) {
+  .mobile-menu-page {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    min-height: 10rem;
+    min-width: 10rem;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right,
+  .menu {
+    display: none !important;
+  }
+
+  .page-3-body {
+    flex-direction: column;
+  }
+
+  .mobile-menu-btn {
+    display: block !important;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5rem 0;
+  }
+
+  .chart-container {
+    grid-column: 2 / span 3;
+    padding: 0;
+    min-width: 50rem;
+  }
+
+  .chart-data {
+    grid-column: 3;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .top-settings,
+  .top-username {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .chart-container {
+    min-width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .chart-container {
+    min-width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .chart-container {
+    padding: 0;
+    min-width: 20rem;
+  }
+}

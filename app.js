@@ -56,6 +56,21 @@ const btns = {
   logoutMenuBtn: document.getElementById("logout-menu-btn"),
 };
 
+const btnsMobile = {
+  weatherDataBtnMobile: document.getElementById("weather-data-btn-mobile"),
+  dataComparisonBtnMobile: document.getElementById(
+    "data-comparison-btn-mobile"
+  ),
+  monthlyComparisonBtnMobile: document.getElementById(
+    "monthly-comparison-btn-mobile"
+  ),
+  energyComparisonBtnMobile: document.getElementById(
+    "energy-comparison-btn-mobile"
+  ),
+  settingsMenuBtnMobile: document.getElementById("settings-menu-btn-mobile"),
+  logoutMenuBtnMobile: document.getElementById("logout-menu-btn-mobile"),
+};
+
 const btnArr = [
   btns.weatherDataBtn,
   btns.dataComparisonBtn,
@@ -63,6 +78,15 @@ const btnArr = [
   btns.energyComparisonBtn,
   btns.settingsMenuBtn,
   btns.logoutMenuBtn,
+];
+
+const btnArrMobile = [
+  btnsMobile.weatherDataBtnMobile,
+  btnsMobile.dataComparisonBtnMobile,
+  btnsMobile.monthlyComparisonBtnMobile,
+  btnsMobile.energyComparisonBtnMobile,
+  btnsMobile.settingsMenuBtnMobile,
+  btnsMobile.logoutMenuBtnMobile,
 ];
 
 const dataPages = {
@@ -379,8 +403,18 @@ btns.weatherDataBtn.addEventListener("click", function () {
   showEl(dataPages.weatherDataEl, navArr);
 });
 
+btnsMobile.weatherDataBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
+  showEl(dataPages.weatherDataEl, navArr);
+});
+
 btns.dataComparisonBtn.addEventListener("click", function () {
   highlightBtn(btns.dataComparisonBtn);
+  showEl(dataPages.dataComparisonEl, navArr);
+});
+
+btnsMobile.dataComparisonBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
   showEl(dataPages.dataComparisonEl, navArr);
 });
 
@@ -389,8 +423,18 @@ btns.monthlyComparisonBtn.addEventListener("click", function () {
   showEl(dataPages.monthlyComparisonEl, navArr);
 });
 
+btnsMobile.monthlyComparisonBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
+  showEl(dataPages.monthlyComparisonEl, navArr);
+});
+
 btns.energyComparisonBtn.addEventListener("click", function () {
   highlightBtn(btns.energyComparisonBtn);
+  showEl(dataPages.energyComparisonEl, navArr);
+});
+
+btnsMobile.energyComparisonBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
   showEl(dataPages.energyComparisonEl, navArr);
 });
 
@@ -398,8 +442,20 @@ btns.settingsMenuBtn.addEventListener("click", function () {
   highlightBtn(btns.settingsMenuBtn);
 });
 
+btnsMobile.settingsMenuBtnMobile.addEventListener("click", function () {
+  highlightBtn(btnsMobile.settingsMenuBtnMobile);
+});
+
 btns.logoutMenuBtn.addEventListener("click", function () {
   highlightBtn(btns.weatherDataBtn);
+  showEl(dataPages.weatherDataEl, navArr);
+  document.querySelector(".page-1").classList.remove("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
+});
+
+btnsMobile.logoutMenuBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
   showEl(dataPages.weatherDataEl, navArr);
   document.querySelector(".page-1").classList.remove("hidden");
   document.querySelector(".page-2").classList.add("hidden");
@@ -3134,4 +3190,11 @@ let energyComparisonChartJs = new Chart(energyComparisonChart, {
       },
     },
   },
+});
+
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenuPage = document.getElementById("mobile-menu-page");
+
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenuPage.classList.toggle("hidden");
 });

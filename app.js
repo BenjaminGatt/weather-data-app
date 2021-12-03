@@ -354,6 +354,20 @@ const precipitation2018Table = document.getElementById(
 );
 const minTemp2018Arr = [8, 7, 9, 10, 13, 17, 20, 21, 18, 14, 11, 6];
 const maxTemp2018Arr = [19, 18, 23, 26, 28, 31, 35, 33, 35, 27, 24, 19];
+const maxTempStacked2018Arr = [
+  maxTemp2018Arr[0] - minTemp2018Arr[0],
+  maxTemp2018Arr[1] - minTemp2018Arr[1],
+  maxTemp2018Arr[2] - minTemp2018Arr[2],
+  maxTemp2018Arr[3] - minTemp2018Arr[3],
+  maxTemp2018Arr[4] - minTemp2018Arr[4],
+  maxTemp2018Arr[5] - minTemp2018Arr[5],
+  maxTemp2018Arr[6] - minTemp2018Arr[6],
+  maxTemp2018Arr[7] - minTemp2018Arr[7],
+  maxTemp2018Arr[8] - minTemp2018Arr[8],
+  maxTemp2018Arr[9] - minTemp2018Arr[9],
+  maxTemp2018Arr[10] - minTemp2018Arr[10],
+  maxTemp2018Arr[11] - minTemp2018Arr[11],
+];
 const precipitation2018Arr = [
   0.5, 135.2, 31.7, 34.2, 4.1, 10.3, 0, 22.1, 5, 217.8, 54.5, 17,
 ];
@@ -423,14 +437,43 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
     labels: monthsArr,
     datasets: [
       {
+        label: "Min",
         data: minTemp2018Arr,
         backgroundColor: [colours.blueMid],
+      },
+      {
+        label: "Max",
+        data: maxTempStacked2018Arr,
+        backgroundColor: [colours.red2],
       },
     ],
   },
   /* Use OPTIONS to create graph title, legend, and label axes. */
   options: {
+    interaction: {
+      mode: "index",
+    },
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              minTemp2018JS.data.datasets[tooltipItem.datasetIndex].label;
+            let value = null;
+
+            if (tooltipItem.datasetIndex === 0) {
+              value =
+                minTemp2018JS.data.datasets[tooltipItem.datasetIndex].data[
+                  tooltipItem.dataIndex
+                ];
+            } else if (tooltipItem.datasetIndex === 1) {
+              value = maxTemp2018Arr[tooltipItem.dataIndex];
+            }
+
+            return label + ": " + value + "\xB0C";
+          },
+        },
+      },
       title: {
         text: "Minimum Temperature 2018",
         display: true,
@@ -441,6 +484,7 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
     },
     scales: {
       yAxes: {
+        stacked: true,
         title: {
           display: true,
           text: "Degrees Celsius",
@@ -450,6 +494,7 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
         },
       },
       xAxes: {
+        stacked: true,
         title: {
           display: false,
         },

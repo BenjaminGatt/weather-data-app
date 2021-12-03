@@ -865,20 +865,32 @@
               </div>
             </div>
             <div id="data-comparison-page" class="data-page hidden">
-              <p class="data-title">Data Comparison</p>
+              <p class="data-title">Yearly Comparison</p>
               <div class="filter-div">
                 <label for="year">Year</label>
                 <select name="year" id="data-comparison-year-select">
-                  <option value="2018">2018</option>
-                  <option value="2018">2019</option>
-                  <option value="2018">2020</option>
+                  <option value="2018">2018 and 2019</option>
+                  <option value="2018">2018 and 2020</option>
+                  <option value="2018">2019 and 2020</option>
                 </select>
-                <input type="checkbox" name="min-temp" />
+                <input
+                  type="checkbox"
+                  name="min-temp"
+                  id="data-comparison-min-temp-checkbox"
+                />
                 <label for="min-temp">Minimum Temperature</label>
-                <input type="checkbox" name="max-temp" />
+                <input
+                  type="checkbox"
+                  name="max-temp"
+                  id="data-comparison-max-temp-checkbox"
+                />
                 <label for="max-temp">Maximum Temperature</label>
-                <input type="checkbox" name="precipitation" />
-                <label for="precipitation">Precipitation</label>
+                <input
+                  type="checkbox"
+                  name="precipitation"
+                  id="data-comparison-precipitation-checkbox"
+                />
+                <label for="precipitation">Rainfall</label>
               </div>
               <div id="data-comparison-container" class="data-grid">GRID</div>
             </div>
@@ -896,7 +908,7 @@
                 <input type="checkbox" name="max-temp" />
                 <label for="max-temp">Maximum Temperature</label>
                 <input type="checkbox" name="precipitation" />
-                <label for="precipitation">Precipitation</label>
+                <label for="precipitation">Rainfall</label>
               </div>
               <div id="monthly-comparison-container" class="data-grid">
                 GRID
@@ -916,7 +928,7 @@
                 <input type="checkbox" name="max-temp" />
                 <label for="max-temp">Maximum Temperature</label>
                 <input type="checkbox" name="precipitation" />
-                <label for="precipitation">Precipitation</label>
+                <label for="precipitation">Rainfall</label>
               </div>
               <div id="energy-comparison-container" class="data-grid">GRID</div>
             </div>

@@ -508,7 +508,7 @@ a {
 }
 
 .months-table tr:nth-child(2n + 1) {
-  background-color: var(--color-grey-light);
+  background-color: #f3f3f3;
 }
 
 .months-table td {

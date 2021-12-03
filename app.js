@@ -790,6 +790,24 @@ const precipitationDecChartContainer = document.getElementById(
   "precipitation-dec-chart-container"
 );
 
+const energyComparisonChart = document
+  .getElementById("energy-comparison-chart")
+  .getContext("2d");
+
+const energyComparisonChartContainer = document.getElementById(
+  "energy-comparison-chart-container"
+);
+
+const energyComparison2018Arr = [
+  115354, 157489, 119662, 106999, 164502, 161392, 218979, 220225, 192215,
+  174009, 170322, 161332,
+];
+
+const energyComparison2020Arr = [
+  223838, 200264, 176103, 160273, 172370, 192342, 214801, 217385, 183703,
+  157660, 107411, 136899,
+];
+
 let minTemp2018JS = new Chart(minTemp2018Chart, {
   type: "bar",
   data: {
@@ -918,6 +936,20 @@ let precipitation2018JS = new Chart(precipitation2018Chart, {
   /* Use OPTIONS to create graph title, legend, and label axes. */
   options: {
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitation2018JS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitation2018JS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+
+            return label + ": " + value + "mm";
+          },
+        },
+      },
       title: {
         text: "Rainfall in 2018",
         display: true,
@@ -1081,6 +1113,20 @@ let precipitation2019JS = new Chart(precipitation2019Chart, {
   /* Use OPTIONS to create graph title, legend, and label axes. */
   options: {
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitation2019JS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitation2019JS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+
+            return label + ": " + value + "mm";
+          },
+        },
+      },
       title: {
         text: "Rainfall in 2019",
         display: true,
@@ -1244,6 +1290,20 @@ let precipitation2020JS = new Chart(precipitation2020Chart, {
   /* Use OPTIONS to create graph title, legend, and label axes. */
   options: {
     plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              precipitation2020JS.data.datasets[tooltipItem.datasetIndex].label;
+            let value =
+              precipitation2020JS.data.datasets[tooltipItem.datasetIndex].data[
+                tooltipItem.dataIndex
+              ];
+
+            return label + ": " + value + "mm";
+          },
+        },
+      },
       title: {
         text: "Rainfall in 2020",
         display: true,
@@ -1612,7 +1672,7 @@ let precipitationJanJS = new Chart(precipitationJanChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -1663,7 +1723,7 @@ let tempFebJS = new Chart(tempFebChart, {
         },
       },
       title: {
-        text: "February",
+        text: "February of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -1726,7 +1786,7 @@ let precipitationFebJS = new Chart(precipitationFebChart, {
         },
       },
       title: {
-        text: "February",
+        text: "February of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -1737,7 +1797,7 @@ let precipitationFebJS = new Chart(precipitationFebChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -1788,7 +1848,7 @@ let tempMarJS = new Chart(tempMarChart, {
         },
       },
       title: {
-        text: "February",
+        text: "March of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -1851,7 +1911,7 @@ let precipitationMarJS = new Chart(precipitationMarChart, {
         },
       },
       title: {
-        text: "February",
+        text: "March of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -1862,7 +1922,7 @@ let precipitationMarJS = new Chart(precipitationMarChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -1913,7 +1973,7 @@ let tempAprJS = new Chart(tempAprChart, {
         },
       },
       title: {
-        text: "February",
+        text: "April of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -1976,7 +2036,7 @@ let precipitationAprJS = new Chart(precipitationAprChart, {
         },
       },
       title: {
-        text: "February",
+        text: "April of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -1987,7 +2047,7 @@ let precipitationAprJS = new Chart(precipitationAprChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -2038,7 +2098,7 @@ let tempMayJS = new Chart(tempMayChart, {
         },
       },
       title: {
-        text: "February",
+        text: "May of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2101,7 +2161,7 @@ let precipitationMayJS = new Chart(precipitationMayChart, {
         },
       },
       title: {
-        text: "February",
+        text: "May of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2112,7 +2172,7 @@ let precipitationMayJS = new Chart(precipitationMayChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -2163,7 +2223,7 @@ let tempJunJS = new Chart(tempJunChart, {
         },
       },
       title: {
-        text: "February",
+        text: "June of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2226,7 +2286,7 @@ let precipitationJunJS = new Chart(precipitationJunChart, {
         },
       },
       title: {
-        text: "February",
+        text: "June of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2237,7 +2297,7 @@ let precipitationJunJS = new Chart(precipitationJunChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -2288,7 +2348,7 @@ let tempJulJS = new Chart(tempJulChart, {
         },
       },
       title: {
-        text: "February",
+        text: "July of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2351,7 +2411,7 @@ let precipitationJulJS = new Chart(precipitationJulChart, {
         },
       },
       title: {
-        text: "February",
+        text: "July of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2362,7 +2422,7 @@ let precipitationJulJS = new Chart(precipitationJulChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -2413,7 +2473,7 @@ let tempAugJS = new Chart(tempAugChart, {
         },
       },
       title: {
-        text: "February",
+        text: "August of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2476,7 +2536,7 @@ let precipitationAugJS = new Chart(precipitationAugChart, {
         },
       },
       title: {
-        text: "February",
+        text: "August of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2487,7 +2547,7 @@ let precipitationAugJS = new Chart(precipitationAugChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -2538,7 +2598,7 @@ let tempSepJS = new Chart(tempSepChart, {
         },
       },
       title: {
-        text: "February",
+        text: "September of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2601,7 +2661,7 @@ let precipitationSepJS = new Chart(precipitationSepChart, {
         },
       },
       title: {
-        text: "February",
+        text: "September of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2612,7 +2672,7 @@ let precipitationSepJS = new Chart(precipitationSepChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -2663,7 +2723,7 @@ let tempOctJS = new Chart(tempOctChart, {
         },
       },
       title: {
-        text: "February",
+        text: "October of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2726,7 +2786,7 @@ let precipitationOctJS = new Chart(precipitationOctChart, {
         },
       },
       title: {
-        text: "February",
+        text: "October of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2737,7 +2797,7 @@ let precipitationOctJS = new Chart(precipitationOctChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -2788,7 +2848,7 @@ let tempNovJS = new Chart(tempNovChart, {
         },
       },
       title: {
-        text: "February",
+        text: "November of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2851,7 +2911,7 @@ let precipitationNovJS = new Chart(precipitationNovChart, {
         },
       },
       title: {
-        text: "February",
+        text: "November of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2862,7 +2922,7 @@ let precipitationNovJS = new Chart(precipitationNovChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
           font: {
             size: 15,
           },
@@ -2913,7 +2973,7 @@ let tempDecJS = new Chart(tempDecChart, {
         },
       },
       title: {
-        text: "February",
+        text: "December of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2976,7 +3036,7 @@ let precipitationDecJS = new Chart(precipitationDecChart, {
         },
       },
       title: {
-        text: "February",
+        text: "December of 2018 and 2020",
         display: true,
       },
       legend: {
@@ -2987,7 +3047,81 @@ let precipitationDecJS = new Chart(precipitationDecChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      xAxes: {
+        title: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+let energyComparisonChartJs = new Chart(energyComparisonChart, {
+  type: "line",
+  data: {
+    labels: monthsArr,
+    datasets: [
+      {
+        label: "2018",
+        data: energyComparison2018Arr,
+        backgroundColor: [colours.orangeLight],
+        borderColor: [colours.orangeLight],
+      },
+      {
+        label: "2019",
+        data: energyComparison2020Arr,
+        backgroundColor: [colours.red2],
+        borderColor: [colours.red2],
+      },
+    ],
+  },
+  /* Use OPTIONS to create graph title, legend, and label axes. */
+  options: {
+    // interaction: {
+    //   mode: "index",
+    // },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            let label =
+              energyComparisonChartJs.data.datasets[tooltipItem.datasetIndex]
+                .label;
+            let value =
+              energyComparisonChartJs.data.datasets[tooltipItem.datasetIndex]
+                .data[tooltipItem.dataIndex];
+
+            return label + ": " + value + " MWh";
+          },
+        },
+      },
+      title: {
+        text: "Energy Consumption in 2018 and 2019",
+        display: true,
+      },
+      legend: {
+        display: true,
+      },
+    },
+    elements: {
+      point: {
+        radius: 4,
+      },
+      line: {
+        tension: 0.15,
+      },
+    },
+    scales: {
+      yAxes: {
+        title: {
+          display: true,
+          text: "Megawatt Hours",
           font: {
             size: 15,
           },

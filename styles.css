@@ -324,7 +324,7 @@ a {
   font-size: 2.5rem;
   color: rgb(141, 141, 141);
   cursor: pointer;
-  padding: 2.25rem;
+  padding: 2rem;
   transition: background-color 0.2s;
 }
 
@@ -351,7 +351,7 @@ a {
 
 .top-settings:hover,
 .user-div:hover {
-  background-color: var(--color-grey-light);
+  background-color: #f3f3f3;
 }
 
 .page-3 {

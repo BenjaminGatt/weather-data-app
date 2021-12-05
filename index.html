@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- This div contains the entire app. -->
     <div class="container">
+      <!-- This section contains the login page. -->
       <section class="page-1">
         <div class="left">
           <h1>Login</h1>
@@ -93,6 +95,7 @@
           </div>
         </div>
       </section>
+      <!-- This section contains the sign-up page. -->
       <section class="page-2 hidden">
         <div class="left">
           <h1>Sign Up</h1>
@@ -191,7 +194,9 @@
           </div>
         </div>
       </section>
+      <!-- This section contains the main application with all the pages that display the weather statistics. -->
       <section class="page-3 hidden">
+        <!-- A bar containing the logo, settings button and the user's image.-->
         <div class="top-bar">
           <div class="logo-container-top">
             <svg
@@ -234,9 +239,11 @@
           </div>
         </div>
         <div class="page-3-body">
+          <!-- A hamburger icon that is only visible when the window is smaller than a certain size. -->
           <div id="mobile-menu-btn" class="mobile-menu-btn">
             <i class="fas fa-bars"></i>
           </div>
+          <!-- A navigation menu that is only visible when the window is smaller than a certain size. -->
           <div id="mobile-menu-page" class="data-page mobile-menu-page hidden">
             <ul>
               <li id="weather-data-btn-mobile" class="menu-selected">
@@ -249,6 +256,7 @@
               <li id="logout-menu-btn-mobile">Log Out</li>
             </ul>
           </div>
+          <!-- The default navigation menu that allows the user to change pages within the app. -->
           <nav class="menu">
             <ul>
               <li id="weather-data-btn" class="menu-selected">Weather Data</li>
@@ -261,7 +269,9 @@
               <li id="logout-menu-btn">Log Out</li>
             </ul>
           </nav>
+          <!-- This div contains the weather data displayed to the user. -->
           <div class="content">
+            <!-- This page shows the user the weather statistics for each year. -->
             <div id="weather-data-page" class="data-page">
               <p class="data-title">Weather Data</p>
               <div class="filter-div">
@@ -798,6 +808,7 @@
                 </div>
               </div>
             </div>
+            <!-- This page allows the user to compare data for different years. -->
             <div id="data-comparison-page" class="data-page hidden">
               <p class="data-title">Yearly Comparison</p>
               <div class="filter-div">
@@ -1112,7 +1123,7 @@
                 </div>
               </div>
             </div>
-
+            <!-- This page allows the user to see data for specific months -->
             <div id="monthly-comparison-page" class="data-page hidden">
               <p class="data-title">Monthly Comparison</p>
               <div class="filter-div">
@@ -2114,7 +2125,7 @@
                 </div>
               </div>
             </div>
-
+            <!-- This page shows the user information on energy consumption for 2018 and 2019-->
             <div id="energy-comparison-page" class="data-page hidden">
               <p class="data-title">Energy Comparison</p>
               <div class="filter-div">

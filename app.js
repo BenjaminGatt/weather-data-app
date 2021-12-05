@@ -1,27 +1,4 @@
-document.getElementById("signup-link").addEventListener("click", () => {
-  document.querySelector(".page-1").classList.add("hidden");
-  document.querySelector(".page-2").classList.remove("hidden");
-  document.querySelector(".page-3").classList.add("hidden");
-});
-
-document.getElementById("login-link").addEventListener("click", () => {
-  document.querySelector(".page-1").classList.remove("hidden");
-  document.querySelector(".page-2").classList.add("hidden");
-  document.querySelector(".page-3").classList.add("hidden");
-});
-
-document.getElementById("signup-btn").addEventListener("click", () => {
-  document.querySelector(".page-1").classList.add("hidden");
-  document.querySelector(".page-2").classList.add("hidden");
-  document.querySelector(".page-3").classList.remove("hidden");
-});
-
-document.getElementById("login-btn").addEventListener("click", () => {
-  document.querySelector(".page-1").classList.add("hidden");
-  document.querySelector(".page-2").classList.add("hidden");
-  document.querySelector(".page-3").classList.remove("hidden");
-});
-
+/* CONSTANT DECLARATIONS */
 const r = document.querySelector(":root");
 
 const colours = {
@@ -40,12 +17,6 @@ const colours = {
   red1: getCssVar("--color-red-1"),
   red2: getCssVar("--color-red-2"),
 };
-
-function getCssVar(varName) {
-  // Get the styles (properties and values) for the root
-  const rs = getComputedStyle(r);
-  return rs.getPropertyValue(varName);
-}
 
 const logOutBtnTopBar = document.getElementById("log-out-btn-top-bar");
 
@@ -141,20 +112,6 @@ const weatherDataYearArr = [
   weatherDataContainer2020,
 ];
 
-function resetCheckBoxes(year) {
-  if (year.minTemp == true) {
-    weatherDataMinTempCheckbox.checked = true;
-  } else {
-    weatherDataMinTempCheckbox.checked = false;
-  }
-
-  if (year.precipitation == true) {
-    weatherDataPrecipitationCheckbox.checked = true;
-  } else {
-    weatherDataPrecipitationCheckbox.checked = false;
-  }
-}
-
 const checkBoxes2018 = {
   minTemp: true,
   precipitation: true,
@@ -239,246 +196,6 @@ const dataComparisonMonthArr = [
 
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenuPage = document.getElementById("mobile-menu-page");
-
-mobileMenuBtn.addEventListener("click", () => {
-  mobileMenuPage.classList.toggle("hidden");
-});
-
-monthlyComparisonMonthSelect.addEventListener("change", () => {
-  if (monthlyComparisonMonthSelect.value == "jan") {
-    showEl(janComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "feb") {
-    showEl(febComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "mar") {
-    showEl(marComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "apr") {
-    showEl(aprComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "may") {
-    showEl(mayComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "jun") {
-    showEl(junComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "jul") {
-    showEl(julComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "aug") {
-    showEl(augComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "sep") {
-    showEl(sepComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "oct") {
-    showEl(octComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "nov") {
-    showEl(novComparisonContainer, dataComparisonMonthArr);
-  } else if (monthlyComparisonMonthSelect.value == "dec") {
-    showEl(decComparisonContainer, dataComparisonMonthArr);
-  }
-});
-
-weatherDataYearSelect.addEventListener("change", () => {
-  if (weatherDataYearSelect.value == "2018") {
-    showEl(weatherDataContainer2018, weatherDataYearArr);
-    resetCheckBoxes(checkBoxes2018);
-  } else if (weatherDataYearSelect.value == "2019") {
-    showEl(weatherDataContainer2019, weatherDataYearArr);
-    resetCheckBoxes(checkBoxes2019);
-  } else if (weatherDataYearSelect.value == "2020") {
-    showEl(weatherDataContainer2020, weatherDataYearArr);
-    resetCheckBoxes(checkBoxes2020);
-  } else {
-    showEl(defaultEl, weatherDataYearArr);
-  }
-});
-
-weatherDataMinTempCheckbox.addEventListener("change", () => {
-  if (weatherDataYearSelect.value == "2018") {
-    if (weatherDataMinTempCheckbox.checked) {
-      checkBoxes2018.minTemp = true;
-      minTemp2018ChartContainer.classList.remove("hidden");
-      minTemp2018Table.classList.remove("hidden");
-    } else {
-      checkBoxes2018.minTemp = false;
-      minTemp2018ChartContainer.classList.add("hidden");
-      minTemp2018Table.classList.add("hidden");
-    }
-  } else if (weatherDataYearSelect.value == "2019") {
-    if (weatherDataMinTempCheckbox.checked) {
-      checkBoxes2019.minTemp = true;
-      minTemp2019ChartContainer.classList.remove("hidden");
-      minTemp2019Table.classList.remove("hidden");
-    } else {
-      checkBoxes2019.minTemp = false;
-      minTemp2019ChartContainer.classList.add("hidden");
-      minTemp2019Table.classList.add("hidden");
-    }
-  } else if (weatherDataYearSelect.value == "2020") {
-    if (weatherDataMinTempCheckbox.checked) {
-      checkBoxes2020.minTemp = true;
-      minTemp2020ChartContainer.classList.remove("hidden");
-      minTemp2020Table.classList.remove("hidden");
-    } else {
-      checkBoxes2020.minTemp = false;
-      minTemp2020ChartContainer.classList.add("hidden");
-      minTemp2020Table.classList.add("hidden");
-    }
-  }
-});
-
-weatherDataPrecipitationCheckbox.addEventListener("change", () => {
-  if (weatherDataYearSelect.value == "2018") {
-    if (weatherDataPrecipitationCheckbox.checked) {
-      checkBoxes2018.precipitation = true;
-      precipitation2018ChartContainer.classList.remove("hidden");
-      precipitation2018Table.classList.remove("hidden");
-    } else {
-      checkBoxes2018.precipitation = false;
-      precipitation2018ChartContainer.classList.add("hidden");
-      precipitation2018Table.classList.add("hidden");
-    }
-  } else if (weatherDataYearSelect.value == "2019") {
-    if (weatherDataPrecipitationCheckbox.checked) {
-      checkBoxes2019.precipitation = true;
-      precipitation2019ChartContainer.classList.remove("hidden");
-      precipitation2019Table.classList.remove("hidden");
-    } else {
-      checkBoxes2019.precipitation = false;
-      precipitation2019ChartContainer.classList.add("hidden");
-      precipitation2019Table.classList.add("hidden");
-    }
-  } else if (weatherDataYearSelect.value == "2020") {
-    if (weatherDataPrecipitationCheckbox.checked) {
-      checkBoxes2020.precipitation = true;
-      precipitation2020ChartContainer.classList.remove("hidden");
-      precipitation2020Table.classList.remove("hidden");
-    } else {
-      checkBoxes2020.precipitation = false;
-      precipitation2020ChartContainer.classList.add("hidden");
-      precipitation2020Table.classList.add("hidden");
-    }
-  }
-});
-
-dataComparisonMinTempCheckbox.addEventListener("change", () => {
-  minTempDCChartContainer.classList.toggle("hidden");
-  minTempDCTable.classList.toggle("hidden");
-});
-
-dataComparisonMaxTempCheckbox.addEventListener("change", () => {
-  maxTempDCChartContainer.classList.toggle("hidden");
-  maxTempDCTable.classList.toggle("hidden");
-});
-
-dataComparisonPrecipitationCheckbox.addEventListener("change", () => {
-  precipitationDCChartContainer.classList.toggle("hidden");
-  precipitationDCTable.classList.toggle("hidden");
-});
-
-btns.weatherDataBtn.addEventListener("click", function () {
-  highlightBtn(btns.weatherDataBtn);
-  showEl(dataPages.weatherDataEl, navArr);
-});
-
-btnsMobile.weatherDataBtnMobile.addEventListener("click", function () {
-  mobileMenuPage.classList.toggle("hidden");
-  highlightBtn(btnsMobile.weatherDataBtnMobile);
-  showEl(dataPages.weatherDataEl, navArr);
-});
-
-btns.dataComparisonBtn.addEventListener("click", function () {
-  highlightBtn(btns.dataComparisonBtn);
-  showEl(dataPages.dataComparisonEl, navArr);
-});
-
-btnsMobile.dataComparisonBtnMobile.addEventListener("click", function () {
-  mobileMenuPage.classList.toggle("hidden");
-  highlightBtn(btnsMobile.dataComparisonBtnMobile);
-  showEl(dataPages.dataComparisonEl, navArr);
-});
-
-btns.monthlyComparisonBtn.addEventListener("click", function () {
-  highlightBtn(btns.monthlyComparisonBtn);
-  showEl(dataPages.monthlyComparisonEl, navArr);
-});
-
-btnsMobile.monthlyComparisonBtnMobile.addEventListener("click", function () {
-  mobileMenuPage.classList.toggle("hidden");
-  highlightBtn(btnsMobile.monthlyComparisonBtnMobile);
-  showEl(dataPages.monthlyComparisonEl, navArr);
-});
-
-btns.energyComparisonBtn.addEventListener("click", function () {
-  highlightBtn(btns.energyComparisonBtn);
-  showEl(dataPages.energyComparisonEl, navArr);
-});
-
-btnsMobile.energyComparisonBtnMobile.addEventListener("click", function () {
-  mobileMenuPage.classList.toggle("hidden");
-  highlightBtn(btnsMobile.energyComparisonBtnMobile);
-  showEl(dataPages.energyComparisonEl, navArr);
-});
-
-btns.settingsMenuBtn.addEventListener("click", function () {
-  highlightBtn(btns.settingsMenuBtn);
-});
-
-btnsMobile.settingsMenuBtnMobile.addEventListener("click", function () {
-  highlightBtn(btnsMobile.settingsMenuBtnMobile);
-});
-
-logOutBtnTopBar.addEventListener("click", function () {
-  highlightBtn(btns.weatherDataBtn);
-  showEl(dataPages.weatherDataEl, navArr);
-  document.querySelector(".page-1").classList.remove("hidden");
-  document.querySelector(".page-2").classList.add("hidden");
-  document.querySelector(".page-3").classList.add("hidden");
-});
-
-btns.logoutMenuBtn.addEventListener("click", function () {
-  highlightBtn(btns.weatherDataBtn);
-  showEl(dataPages.weatherDataEl, navArr);
-  document.querySelector(".page-1").classList.remove("hidden");
-  document.querySelector(".page-2").classList.add("hidden");
-  document.querySelector(".page-3").classList.add("hidden");
-});
-
-btnsMobile.logoutMenuBtnMobile.addEventListener("click", function () {
-  mobileMenuPage.classList.toggle("hidden");
-  highlightBtn(btnsMobile.weatherDataBtnMobile);
-  showEl(dataPages.weatherDataEl, navArr);
-  document.querySelector(".page-1").classList.remove("hidden");
-  document.querySelector(".page-2").classList.add("hidden");
-  document.querySelector(".page-3").classList.add("hidden");
-});
-
-function showEl(el, elArray) {
-  elArray.forEach((element) => {
-    if (element !== el) {
-      element.classList.add("hidden");
-    }
-  });
-  el.classList.remove("hidden");
-}
-
-function highlightBtn(btn) {
-  btnArr.forEach((button) => {
-    if (button !== btn) {
-      button.classList.remove("menu-selected");
-    }
-  });
-  btn.classList.add("menu-selected");
-}
-
-const monthsArr = [
-  "January",
-  "Fenbruary",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 const minTemp2018Chart = document
   .getElementById("min-temp-2018-chart")
@@ -830,6 +547,299 @@ const energyComparison2020Arr = [
   223838, 200264, 176103, 160273, 172370, 192342, 214801, 217385, 183703,
   157660, 107411, 136899,
 ];
+
+const monthsArr = [
+  "January",
+  "Fenbruary",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+/* BUTTON LISTENERS */
+document.getElementById("signup-link").addEventListener("click", () => {
+  document.querySelector(".page-1").classList.add("hidden");
+  document.querySelector(".page-2").classList.remove("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
+});
+
+document.getElementById("login-link").addEventListener("click", () => {
+  document.querySelector(".page-1").classList.remove("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
+});
+
+document.getElementById("signup-btn").addEventListener("click", () => {
+  document.querySelector(".page-1").classList.add("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.remove("hidden");
+});
+
+document.getElementById("login-btn").addEventListener("click", () => {
+  document.querySelector(".page-1").classList.add("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.remove("hidden");
+});
+
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenuPage.classList.toggle("hidden");
+});
+
+monthlyComparisonMonthSelect.addEventListener("change", () => {
+  if (monthlyComparisonMonthSelect.value == "jan") {
+    showEl(janComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "feb") {
+    showEl(febComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "mar") {
+    showEl(marComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "apr") {
+    showEl(aprComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "may") {
+    showEl(mayComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "jun") {
+    showEl(junComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "jul") {
+    showEl(julComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "aug") {
+    showEl(augComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "sep") {
+    showEl(sepComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "oct") {
+    showEl(octComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "nov") {
+    showEl(novComparisonContainer, dataComparisonMonthArr);
+  } else if (monthlyComparisonMonthSelect.value == "dec") {
+    showEl(decComparisonContainer, dataComparisonMonthArr);
+  }
+});
+
+weatherDataYearSelect.addEventListener("change", () => {
+  if (weatherDataYearSelect.value == "2018") {
+    showEl(weatherDataContainer2018, weatherDataYearArr);
+    resetCheckBoxes(checkBoxes2018);
+  } else if (weatherDataYearSelect.value == "2019") {
+    showEl(weatherDataContainer2019, weatherDataYearArr);
+    resetCheckBoxes(checkBoxes2019);
+  } else if (weatherDataYearSelect.value == "2020") {
+    showEl(weatherDataContainer2020, weatherDataYearArr);
+    resetCheckBoxes(checkBoxes2020);
+  } else {
+    showEl(defaultEl, weatherDataYearArr);
+  }
+});
+
+weatherDataMinTempCheckbox.addEventListener("change", () => {
+  if (weatherDataYearSelect.value == "2018") {
+    if (weatherDataMinTempCheckbox.checked) {
+      checkBoxes2018.minTemp = true;
+      minTemp2018ChartContainer.classList.remove("hidden");
+      minTemp2018Table.classList.remove("hidden");
+    } else {
+      checkBoxes2018.minTemp = false;
+      minTemp2018ChartContainer.classList.add("hidden");
+      minTemp2018Table.classList.add("hidden");
+    }
+  } else if (weatherDataYearSelect.value == "2019") {
+    if (weatherDataMinTempCheckbox.checked) {
+      checkBoxes2019.minTemp = true;
+      minTemp2019ChartContainer.classList.remove("hidden");
+      minTemp2019Table.classList.remove("hidden");
+    } else {
+      checkBoxes2019.minTemp = false;
+      minTemp2019ChartContainer.classList.add("hidden");
+      minTemp2019Table.classList.add("hidden");
+    }
+  } else if (weatherDataYearSelect.value == "2020") {
+    if (weatherDataMinTempCheckbox.checked) {
+      checkBoxes2020.minTemp = true;
+      minTemp2020ChartContainer.classList.remove("hidden");
+      minTemp2020Table.classList.remove("hidden");
+    } else {
+      checkBoxes2020.minTemp = false;
+      minTemp2020ChartContainer.classList.add("hidden");
+      minTemp2020Table.classList.add("hidden");
+    }
+  }
+});
+
+weatherDataPrecipitationCheckbox.addEventListener("change", () => {
+  if (weatherDataYearSelect.value == "2018") {
+    if (weatherDataPrecipitationCheckbox.checked) {
+      checkBoxes2018.precipitation = true;
+      precipitation2018ChartContainer.classList.remove("hidden");
+      precipitation2018Table.classList.remove("hidden");
+    } else {
+      checkBoxes2018.precipitation = false;
+      precipitation2018ChartContainer.classList.add("hidden");
+      precipitation2018Table.classList.add("hidden");
+    }
+  } else if (weatherDataYearSelect.value == "2019") {
+    if (weatherDataPrecipitationCheckbox.checked) {
+      checkBoxes2019.precipitation = true;
+      precipitation2019ChartContainer.classList.remove("hidden");
+      precipitation2019Table.classList.remove("hidden");
+    } else {
+      checkBoxes2019.precipitation = false;
+      precipitation2019ChartContainer.classList.add("hidden");
+      precipitation2019Table.classList.add("hidden");
+    }
+  } else if (weatherDataYearSelect.value == "2020") {
+    if (weatherDataPrecipitationCheckbox.checked) {
+      checkBoxes2020.precipitation = true;
+      precipitation2020ChartContainer.classList.remove("hidden");
+      precipitation2020Table.classList.remove("hidden");
+    } else {
+      checkBoxes2020.precipitation = false;
+      precipitation2020ChartContainer.classList.add("hidden");
+      precipitation2020Table.classList.add("hidden");
+    }
+  }
+});
+
+dataComparisonMinTempCheckbox.addEventListener("change", () => {
+  minTempDCChartContainer.classList.toggle("hidden");
+  minTempDCTable.classList.toggle("hidden");
+});
+
+dataComparisonMaxTempCheckbox.addEventListener("change", () => {
+  maxTempDCChartContainer.classList.toggle("hidden");
+  maxTempDCTable.classList.toggle("hidden");
+});
+
+dataComparisonPrecipitationCheckbox.addEventListener("change", () => {
+  precipitationDCChartContainer.classList.toggle("hidden");
+  precipitationDCTable.classList.toggle("hidden");
+});
+
+btns.weatherDataBtn.addEventListener("click", function () {
+  highlightBtn(btns.weatherDataBtn);
+  showEl(dataPages.weatherDataEl, navArr);
+});
+
+btnsMobile.weatherDataBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.weatherDataBtnMobile);
+  showEl(dataPages.weatherDataEl, navArr);
+});
+
+btns.dataComparisonBtn.addEventListener("click", function () {
+  highlightBtn(btns.dataComparisonBtn);
+  showEl(dataPages.dataComparisonEl, navArr);
+});
+
+btnsMobile.dataComparisonBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.dataComparisonBtnMobile);
+  showEl(dataPages.dataComparisonEl, navArr);
+});
+
+btns.monthlyComparisonBtn.addEventListener("click", function () {
+  highlightBtn(btns.monthlyComparisonBtn);
+  showEl(dataPages.monthlyComparisonEl, navArr);
+});
+
+btnsMobile.monthlyComparisonBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.monthlyComparisonBtnMobile);
+  showEl(dataPages.monthlyComparisonEl, navArr);
+});
+
+btns.energyComparisonBtn.addEventListener("click", function () {
+  highlightBtn(btns.energyComparisonBtn);
+  showEl(dataPages.energyComparisonEl, navArr);
+});
+
+btnsMobile.energyComparisonBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.energyComparisonBtnMobile);
+  showEl(dataPages.energyComparisonEl, navArr);
+});
+
+btns.settingsMenuBtn.addEventListener("click", function () {
+  highlightBtn(btns.settingsMenuBtn);
+});
+
+btnsMobile.settingsMenuBtnMobile.addEventListener("click", function () {
+  highlightBtn(btnsMobile.settingsMenuBtnMobile);
+});
+
+logOutBtnTopBar.addEventListener("click", function () {
+  highlightBtn(btns.weatherDataBtn);
+  showEl(dataPages.weatherDataEl, navArr);
+  document.querySelector(".page-1").classList.remove("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
+});
+
+btns.logoutMenuBtn.addEventListener("click", function () {
+  highlightBtn(btns.weatherDataBtn);
+  showEl(dataPages.weatherDataEl, navArr);
+  document.querySelector(".page-1").classList.remove("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
+});
+
+btnsMobile.logoutMenuBtnMobile.addEventListener("click", function () {
+  mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.weatherDataBtnMobile);
+  showEl(dataPages.weatherDataEl, navArr);
+  document.querySelector(".page-1").classList.remove("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
+});
+
+/* CUSTOM FUNCTIONS */
+
+// Use CSS variables in Javascript
+function getCssVar(varName) {
+  // Get the styles (properties and values) for the root
+  const rs = getComputedStyle(r);
+  return rs.getPropertyValue(varName);
+}
+
+// Reset the checkboxes in the filter div of the data pages.
+function resetCheckBoxes(year) {
+  if (year.minTemp == true) {
+    weatherDataMinTempCheckbox.checked = true;
+  } else {
+    weatherDataMinTempCheckbox.checked = false;
+  }
+
+  if (year.precipitation == true) {
+    weatherDataPrecipitationCheckbox.checked = true;
+  } else {
+    weatherDataPrecipitationCheckbox.checked = false;
+  }
+}
+
+// Show the desired page and hide all the rest
+function showEl(el, elArray) {
+  elArray.forEach((element) => {
+    if (element !== el) {
+      element.classList.add("hidden");
+    }
+  });
+  el.classList.remove("hidden");
+}
+
+// Highlight the pressed button
+function highlightBtn(btn) {
+  btnArr.forEach((button) => {
+    if (button !== btn) {
+      button.classList.remove("menu-selected");
+    }
+  });
+  btn.classList.add("menu-selected");
+}
+
+/* DATA CHARTS */
 
 let minTemp2018JS = new Chart(minTemp2018Chart, {
   type: "bar",

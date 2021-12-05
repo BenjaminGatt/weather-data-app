@@ -490,6 +490,7 @@ a {
   gap: 10rem 0;
   overflow-y: scroll;
   height: 100%;
+  padding-bottom: 10rem;
 }
 
 .data-page {
@@ -682,6 +683,20 @@ a {
 @media only screen and (max-width: 600px) {
   .chart-container {
     min-width: 40rem;
+  }
+
+  .filter-div {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .filter-div input {
+    margin: 0 1rem;
+  }
+
+  .filter-div input[type="checkbox"] {
+    transform: translateY(0.3rem);
   }
 }
 

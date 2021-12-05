@@ -827,12 +827,12 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
       {
         label: "Min",
         data: minTemp2018Arr,
-        backgroundColor: [colours.blueMid],
+        backgroundColor: [colours.blueDarkest],
       },
       {
         label: "Max",
         data: maxTempStacked2018Arr,
-        backgroundColor: [colours.red2],
+        backgroundColor: [colours.orangeMid],
       },
     ],
   },
@@ -863,8 +863,11 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
         },
       },
       title: {
-        text: "Minimum Temperature 2018",
         display: true,
+        text: "Minimum and Maximum Temperatures in 2018",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -875,9 +878,10 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
         stacked: true,
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -921,8 +925,11 @@ let precipitation2018JS = new Chart(precipitation2018Chart, {
         },
       },
       title: {
-        text: "Rainfall in 2018",
         display: true,
+        text: "Rainfall in 2018",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -941,9 +948,10 @@ let precipitation2018JS = new Chart(precipitation2018Chart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -964,12 +972,12 @@ let minTemp2019JS = new Chart(minTemp2019Chart, {
       {
         label: "Min",
         data: minTemp2019Arr,
-        backgroundColor: [colours.blueMid],
+        backgroundColor: [colours.blueDarkest],
       },
       {
         label: "Max",
         data: maxTempStacked2019Arr,
-        backgroundColor: [colours.red2],
+        backgroundColor: [colours.orangeMid],
       },
     ],
   },
@@ -1000,8 +1008,11 @@ let minTemp2019JS = new Chart(minTemp2019Chart, {
         },
       },
       title: {
-        text: "Minimum Temperature 2019",
         display: true,
+        text: "Minimum and Maximum Temperatures in 2019",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1012,9 +1023,10 @@ let minTemp2019JS = new Chart(minTemp2019Chart, {
         stacked: true,
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1057,8 +1069,11 @@ let precipitation2019JS = new Chart(precipitation2019Chart, {
         },
       },
       title: {
-        text: "Rainfall in 2019",
         display: true,
+        text: "Rainfall in 2019",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1077,9 +1092,10 @@ let precipitation2019JS = new Chart(precipitation2019Chart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1100,12 +1116,12 @@ let minTemp2020JS = new Chart(minTemp2020Chart, {
       {
         label: "Min",
         data: minTemp2020Arr,
-        backgroundColor: [colours.blueMid],
+        backgroundColor: [colours.blueDarkest],
       },
       {
         label: "Max",
         data: maxTempStacked2020Arr,
-        backgroundColor: [colours.red2],
+        backgroundColor: [colours.orangeMid],
       },
     ],
   },
@@ -1136,8 +1152,11 @@ let minTemp2020JS = new Chart(minTemp2020Chart, {
         },
       },
       title: {
-        text: "Minimum Temperature 2020",
         display: true,
+        text: "Minimum and Maximum Temperatures in 2020",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1148,9 +1167,10 @@ let minTemp2020JS = new Chart(minTemp2020Chart, {
         stacked: true,
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1193,8 +1213,11 @@ let precipitation2020JS = new Chart(precipitation2020Chart, {
         },
       },
       title: {
-        text: "Rainfall in 2020",
         display: true,
+        text: "Rainfall in 2020",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1213,9 +1236,10 @@ let precipitation2020JS = new Chart(precipitation2020Chart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1242,8 +1266,8 @@ let minTempDCJS = new Chart(minTempDCChart, {
       {
         label: "2020",
         data: minTemp2020Arr,
-        backgroundColor: [colours.blueLight],
-        borderColor: [colours.blueLight],
+        backgroundColor: [colours.blueDarkest],
+        borderColor: [colours.blueDarkest],
       },
     ],
   },
@@ -1268,8 +1292,11 @@ let minTempDCJS = new Chart(minTempDCChart, {
         },
       },
       title: {
-        text: "Minimum Temperature in 2018 and 2020",
         display: true,
+        text: "Minimum Temperatures in 2018 and 2020",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: true,
@@ -1287,9 +1314,10 @@ let minTempDCJS = new Chart(minTempDCChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1342,8 +1370,11 @@ let maxTempDCJS = new Chart(maxTempDCChart, {
         },
       },
       title: {
-        text: "Maximum Temperature in 2018 and 2020",
         display: true,
+        text: "Maximum Temperatures in 2018 and 2020",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: true,
@@ -1361,9 +1392,10 @@ let maxTempDCJS = new Chart(maxTempDCChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1416,8 +1448,11 @@ let precipitationDCJS = new Chart(precipitationDCChart, {
         },
       },
       title: {
-        text: "Precipitation in 2018 and 2020",
         display: true,
+        text: "Precipitation in 2018 and 2020",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: true,
@@ -1435,9 +1470,10 @@ let precipitationDCJS = new Chart(precipitationDCChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1486,8 +1522,11 @@ let tempJanJS = new Chart(tempJanChart, {
         },
       },
       title: {
-        text: "January of 2018 and 2020",
         display: true,
+        text: "Temperatures in January of 2018 and 2020",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1497,9 +1536,10 @@ let tempJanJS = new Chart(tempJanChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1549,8 +1589,11 @@ let precipitationJanJS = new Chart(precipitationJanChart, {
         },
       },
       title: {
-        text: "January of 2018 and 2020",
         display: true,
+        text: "Precipitation in January of 2018 and 2020",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1560,9 +1603,10 @@ let precipitationJanJS = new Chart(precipitationJanChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1611,8 +1655,11 @@ let tempFebJS = new Chart(tempFebChart, {
         },
       },
       title: {
-        text: "February of 2018 and 2020",
         display: true,
+        text: "Temperatures in February of 2018 and 2020",
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1622,9 +1669,10 @@ let tempFebJS = new Chart(tempFebChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1676,6 +1724,9 @@ let precipitationFebJS = new Chart(precipitationFebChart, {
       title: {
         text: "February of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1685,9 +1736,10 @@ let precipitationFebJS = new Chart(precipitationFebChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1738,6 +1790,9 @@ let tempMarJS = new Chart(tempMarChart, {
       title: {
         text: "March of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1747,9 +1802,10 @@ let tempMarJS = new Chart(tempMarChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1801,6 +1857,9 @@ let precipitationMarJS = new Chart(precipitationMarChart, {
       title: {
         text: "March of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1810,9 +1869,10 @@ let precipitationMarJS = new Chart(precipitationMarChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1863,6 +1923,9 @@ let tempAprJS = new Chart(tempAprChart, {
       title: {
         text: "April of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1872,9 +1935,10 @@ let tempAprJS = new Chart(tempAprChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1926,6 +1990,9 @@ let precipitationAprJS = new Chart(precipitationAprChart, {
       title: {
         text: "April of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1935,9 +2002,10 @@ let precipitationAprJS = new Chart(precipitationAprChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -1988,6 +2056,9 @@ let tempMayJS = new Chart(tempMayChart, {
       title: {
         text: "May of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -1997,9 +2068,10 @@ let tempMayJS = new Chart(tempMayChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2051,6 +2123,9 @@ let precipitationMayJS = new Chart(precipitationMayChart, {
       title: {
         text: "May of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2060,9 +2135,10 @@ let precipitationMayJS = new Chart(precipitationMayChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2113,6 +2189,9 @@ let tempJunJS = new Chart(tempJunChart, {
       title: {
         text: "June of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2122,9 +2201,10 @@ let tempJunJS = new Chart(tempJunChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2176,6 +2256,9 @@ let precipitationJunJS = new Chart(precipitationJunChart, {
       title: {
         text: "June of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2185,9 +2268,10 @@ let precipitationJunJS = new Chart(precipitationJunChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2238,6 +2322,9 @@ let tempJulJS = new Chart(tempJulChart, {
       title: {
         text: "July of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2247,9 +2334,10 @@ let tempJulJS = new Chart(tempJulChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2301,6 +2389,9 @@ let precipitationJulJS = new Chart(precipitationJulChart, {
       title: {
         text: "July of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2310,9 +2401,10 @@ let precipitationJulJS = new Chart(precipitationJulChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2363,6 +2455,9 @@ let tempAugJS = new Chart(tempAugChart, {
       title: {
         text: "August of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2372,9 +2467,10 @@ let tempAugJS = new Chart(tempAugChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2426,6 +2522,9 @@ let precipitationAugJS = new Chart(precipitationAugChart, {
       title: {
         text: "August of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2435,9 +2534,10 @@ let precipitationAugJS = new Chart(precipitationAugChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2488,6 +2588,9 @@ let tempSepJS = new Chart(tempSepChart, {
       title: {
         text: "September of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2497,9 +2600,10 @@ let tempSepJS = new Chart(tempSepChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2551,6 +2655,9 @@ let precipitationSepJS = new Chart(precipitationSepChart, {
       title: {
         text: "September of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2560,9 +2667,10 @@ let precipitationSepJS = new Chart(precipitationSepChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2613,6 +2721,9 @@ let tempOctJS = new Chart(tempOctChart, {
       title: {
         text: "October of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2622,9 +2733,10 @@ let tempOctJS = new Chart(tempOctChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2676,6 +2788,9 @@ let precipitationOctJS = new Chart(precipitationOctChart, {
       title: {
         text: "October of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2685,9 +2800,10 @@ let precipitationOctJS = new Chart(precipitationOctChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2738,6 +2854,9 @@ let tempNovJS = new Chart(tempNovChart, {
       title: {
         text: "November of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2747,9 +2866,10 @@ let tempNovJS = new Chart(tempNovChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2801,6 +2921,9 @@ let precipitationNovJS = new Chart(precipitationNovChart, {
       title: {
         text: "November of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2810,9 +2933,10 @@ let precipitationNovJS = new Chart(precipitationNovChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2863,6 +2987,9 @@ let tempDecJS = new Chart(tempDecChart, {
       title: {
         text: "December of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2872,9 +2999,10 @@ let tempDecJS = new Chart(tempDecChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Degrees Celsius",
+          text: "Degrees Celsius ( \xB0C )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2926,6 +3054,9 @@ let precipitationDecJS = new Chart(precipitationDecChart, {
       title: {
         text: "December of 2018 and 2020",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: false,
@@ -2935,9 +3066,10 @@ let precipitationDecJS = new Chart(precipitationDecChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Millimetres",
+          text: "Millimetres ( mm )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },
@@ -2992,6 +3124,9 @@ let energyComparisonChartJs = new Chart(energyComparisonChart, {
       title: {
         text: "Energy Consumption in 2018 and 2019",
         display: true,
+        font: {
+          size: 16,
+        },
       },
       legend: {
         display: true,
@@ -3009,9 +3144,10 @@ let energyComparisonChartJs = new Chart(energyComparisonChart, {
       yAxes: {
         title: {
           display: true,
-          text: "Megawatt Hours",
+          text: "Megawatt Hours ( MWh )",
           font: {
-            size: 15,
+            size: 14,
+            weight: 600,
           },
         },
       },

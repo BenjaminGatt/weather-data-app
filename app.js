@@ -47,6 +47,8 @@ function getCssVar(varName) {
   return rs.getPropertyValue(varName);
 }
 
+const logOutBtnTopBar = document.getElementById("log-out-btn-top-bar");
+
 const btns = {
   weatherDataBtn: document.getElementById("weather-data-btn"),
   dataComparisonBtn: document.getElementById("data-comparison-btn"),
@@ -78,9 +80,6 @@ const btnArr = [
   btns.energyComparisonBtn,
   btns.settingsMenuBtn,
   btns.logoutMenuBtn,
-];
-
-const btnArrMobile = [
   btnsMobile.weatherDataBtnMobile,
   btnsMobile.dataComparisonBtnMobile,
   btnsMobile.monthlyComparisonBtnMobile,
@@ -378,6 +377,7 @@ btns.weatherDataBtn.addEventListener("click", function () {
 
 btnsMobile.weatherDataBtnMobile.addEventListener("click", function () {
   mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.weatherDataBtnMobile);
   showEl(dataPages.weatherDataEl, navArr);
 });
 
@@ -388,6 +388,7 @@ btns.dataComparisonBtn.addEventListener("click", function () {
 
 btnsMobile.dataComparisonBtnMobile.addEventListener("click", function () {
   mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.dataComparisonBtnMobile);
   showEl(dataPages.dataComparisonEl, navArr);
 });
 
@@ -398,6 +399,7 @@ btns.monthlyComparisonBtn.addEventListener("click", function () {
 
 btnsMobile.monthlyComparisonBtnMobile.addEventListener("click", function () {
   mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.monthlyComparisonBtnMobile);
   showEl(dataPages.monthlyComparisonEl, navArr);
 });
 
@@ -408,6 +410,7 @@ btns.energyComparisonBtn.addEventListener("click", function () {
 
 btnsMobile.energyComparisonBtnMobile.addEventListener("click", function () {
   mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.energyComparisonBtnMobile);
   showEl(dataPages.energyComparisonEl, navArr);
 });
 
@@ -417,6 +420,14 @@ btns.settingsMenuBtn.addEventListener("click", function () {
 
 btnsMobile.settingsMenuBtnMobile.addEventListener("click", function () {
   highlightBtn(btnsMobile.settingsMenuBtnMobile);
+});
+
+logOutBtnTopBar.addEventListener("click", function () {
+  highlightBtn(btns.weatherDataBtn);
+  showEl(dataPages.weatherDataEl, navArr);
+  document.querySelector(".page-1").classList.remove("hidden");
+  document.querySelector(".page-2").classList.add("hidden");
+  document.querySelector(".page-3").classList.add("hidden");
 });
 
 btns.logoutMenuBtn.addEventListener("click", function () {
@@ -429,6 +440,7 @@ btns.logoutMenuBtn.addEventListener("click", function () {
 
 btnsMobile.logoutMenuBtnMobile.addEventListener("click", function () {
   mobileMenuPage.classList.toggle("hidden");
+  highlightBtn(btnsMobile.weatherDataBtnMobile);
   showEl(dataPages.weatherDataEl, navArr);
   document.querySelector(".page-1").classList.remove("hidden");
   document.querySelector(".page-2").classList.add("hidden");
@@ -864,7 +876,7 @@ let minTemp2018JS = new Chart(minTemp2018Chart, {
       },
       title: {
         display: true,
-        text: "Minimum and Maximum Temperatures in 2018",
+        text: "Min and Max Temperatures in 2018",
         font: {
           size: 16,
         },
@@ -1009,7 +1021,7 @@ let minTemp2019JS = new Chart(minTemp2019Chart, {
       },
       title: {
         display: true,
-        text: "Minimum and Maximum Temperatures in 2019",
+        text: "Min and Max Temperatures in 2019",
         font: {
           size: 16,
         },
@@ -1153,7 +1165,7 @@ let minTemp2020JS = new Chart(minTemp2020Chart, {
       },
       title: {
         display: true,
-        text: "Minimum and Maximum Temperatures in 2020",
+        text: "Min and Max Temperatures in 2020",
         font: {
           size: 16,
         },
@@ -1523,7 +1535,7 @@ let tempJanJS = new Chart(tempJanChart, {
       },
       title: {
         display: true,
-        text: "Temperatures in January of 2018 and 2020",
+        text: "Temperatures in January 2018 and 2020",
         font: {
           size: 16,
         },
@@ -1590,7 +1602,7 @@ let precipitationJanJS = new Chart(precipitationJanChart, {
       },
       title: {
         display: true,
-        text: "Precipitation in January of 2018 and 2020",
+        text: "Rainfall in January 2018 and 2020",
         font: {
           size: 16,
         },
@@ -1656,7 +1668,7 @@ let tempFebJS = new Chart(tempFebChart, {
       },
       title: {
         display: true,
-        text: "Temperatures in February of 2018 and 2020",
+        text: "Temperatures in February 2018 and 2020",
         font: {
           size: 16,
         },
@@ -1722,7 +1734,7 @@ let precipitationFebJS = new Chart(precipitationFebChart, {
         },
       },
       title: {
-        text: "February of 2018 and 2020",
+        text: "Rainfall in February 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -1788,7 +1800,7 @@ let tempMarJS = new Chart(tempMarChart, {
         },
       },
       title: {
-        text: "March of 2018 and 2020",
+        text: "Temperatures in March 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -1855,7 +1867,7 @@ let precipitationMarJS = new Chart(precipitationMarChart, {
         },
       },
       title: {
-        text: "March of 2018 and 2020",
+        text: "Rainfall in March 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -1921,7 +1933,7 @@ let tempAprJS = new Chart(tempAprChart, {
         },
       },
       title: {
-        text: "April of 2018 and 2020",
+        text: "Temperatures in April 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -1988,7 +2000,7 @@ let precipitationAprJS = new Chart(precipitationAprChart, {
         },
       },
       title: {
-        text: "April of 2018 and 2020",
+        text: "Rainfall in April of 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2054,7 +2066,7 @@ let tempMayJS = new Chart(tempMayChart, {
         },
       },
       title: {
-        text: "May of 2018 and 2020",
+        text: "Temperatures in May 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2121,7 +2133,7 @@ let precipitationMayJS = new Chart(precipitationMayChart, {
         },
       },
       title: {
-        text: "May of 2018 and 2020",
+        text: "Rainfall in May 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2187,7 +2199,7 @@ let tempJunJS = new Chart(tempJunChart, {
         },
       },
       title: {
-        text: "June of 2018 and 2020",
+        text: "Temperatures in June 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2254,7 +2266,7 @@ let precipitationJunJS = new Chart(precipitationJunChart, {
         },
       },
       title: {
-        text: "June of 2018 and 2020",
+        text: "Rainfall in June 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2320,7 +2332,7 @@ let tempJulJS = new Chart(tempJulChart, {
         },
       },
       title: {
-        text: "July of 2018 and 2020",
+        text: "Temperatures in July 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2387,7 +2399,7 @@ let precipitationJulJS = new Chart(precipitationJulChart, {
         },
       },
       title: {
-        text: "July of 2018 and 2020",
+        text: "Rainfall in July 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2453,7 +2465,7 @@ let tempAugJS = new Chart(tempAugChart, {
         },
       },
       title: {
-        text: "August of 2018 and 2020",
+        text: "Temperatures in August 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2520,7 +2532,7 @@ let precipitationAugJS = new Chart(precipitationAugChart, {
         },
       },
       title: {
-        text: "August of 2018 and 2020",
+        text: "Rainfall in August 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2586,7 +2598,7 @@ let tempSepJS = new Chart(tempSepChart, {
         },
       },
       title: {
-        text: "September of 2018 and 2020",
+        text: "Temperatures in September 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2653,7 +2665,7 @@ let precipitationSepJS = new Chart(precipitationSepChart, {
         },
       },
       title: {
-        text: "September of 2018 and 2020",
+        text: "Rainfall in September 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2719,7 +2731,7 @@ let tempOctJS = new Chart(tempOctChart, {
         },
       },
       title: {
-        text: "October of 2018 and 2020",
+        text: "Temperatures in October 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2786,7 +2798,7 @@ let precipitationOctJS = new Chart(precipitationOctChart, {
         },
       },
       title: {
-        text: "October of 2018 and 2020",
+        text: "Rainfall in October 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2852,7 +2864,7 @@ let tempNovJS = new Chart(tempNovChart, {
         },
       },
       title: {
-        text: "November of 2018 and 2020",
+        text: "Temperatures in November 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2919,7 +2931,7 @@ let precipitationNovJS = new Chart(precipitationNovChart, {
         },
       },
       title: {
-        text: "November of 2018 and 2020",
+        text: "Rainfall in November 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -2985,7 +2997,7 @@ let tempDecJS = new Chart(tempDecChart, {
         },
       },
       title: {
-        text: "December of 2018 and 2020",
+        text: "Temperatures in December 2018 and 2020",
         display: true,
         font: {
           size: 16,
@@ -3052,7 +3064,7 @@ let precipitationDecJS = new Chart(precipitationDecChart, {
         },
       },
       title: {
-        text: "December of 2018 and 2020",
+        text: "Rainfall in December 2018 and 2020",
         display: true,
         font: {
           size: 16,

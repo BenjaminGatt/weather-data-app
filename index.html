@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="container">
-      <section class="page-1 hidden">
+      <section class="page-1">
         <div class="left">
           <h1>Login</h1>
           <div class="login-form-container">
@@ -191,7 +191,7 @@
           </div>
         </div>
       </section>
-      <section class="page-3">
+      <section class="page-3 hidden">
         <div class="top-bar">
           <div class="logo-container-top">
             <svg
@@ -226,11 +226,11 @@
           <div class="spacer"></div>
           <i class="fas fa-cog top-settings"></i>
           <div class="user-div">
-            <img
-              class="top-user"
-              src="https://randomuser.me/api/portraits/men/86.jpg"
-            />
-            <span class="top-username">Harold Black</span>
+            <img class="top-user" src="res/img/user_photo.jpg" />
+            <span class="top-username">Benjamin Gatt</span>
+            <div class="user-drop-down">
+              <p id="log-out-btn-top-bar">Log Out</p>
+            </div>
           </div>
         </div>
         <div class="page-3-body">
@@ -239,7 +239,9 @@
           </div>
           <div id="mobile-menu-page" class="data-page mobile-menu-page hidden">
             <ul>
-              <li id="weather-data-btn-mobile">Weather Data</li>
+              <li id="weather-data-btn-mobile" class="menu-selected">
+                Weather Data
+              </li>
               <li id="data-comparison-btn-mobile">Yearly Comparison</li>
               <li id="monthly-comparison-btn-mobile">Monthly Comparison</li>
               <li id="energy-comparison-btn-mobile">Energy Comparison</li>
@@ -294,8 +296,28 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>Min &deg;C</td>
-                        <td>Max &deg;C</td>
+                        <td>
+                          <p>Min &deg;C</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon
+                              text-blue-darkest
+                            "
+                          ></i>
+                        </td>
+                        <td>
+                          <p>Max &deg;C</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon
+                              text-orange-mid
+                            "
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -374,7 +396,12 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>mm</td>
+                        <td>
+                          <p>mm</p>
+                          <i
+                            class="fas fa-cloud-rain table-icon text-blue-mid"
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -440,8 +467,28 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>Min &deg;C</td>
-                        <td>Max &deg;C</td>
+                        <td>
+                          <p>Min &deg;C</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon
+                              text-blue-darkest
+                            "
+                          ></i>
+                        </td>
+                        <td>
+                          <p>Max &deg;C</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon
+                              text-orange-mid
+                            "
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -519,7 +566,12 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>mm</td>
+                        <td>
+                          <p>mm</p>
+                          <i
+                            class="fas fa-cloud-rain table-icon text-blue-mid"
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -585,8 +637,28 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>Min &deg;C</td>
-                        <td>Max &deg;C</td>
+                        <td>
+                          <p>Min &deg;C</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon
+                              text-blue-darkest
+                            "
+                          ></i>
+                        </td>
+                        <td>
+                          <p>Max &deg;C</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon
+                              text-orange-mid
+                            "
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -664,7 +736,12 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>mm</td>
+                        <td>
+                          <p>mm</p>
+                          <i
+                            class="fas fa-cloud-rain table-icon text-blue-mid"
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -758,8 +835,28 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>2018 (&deg;C)</td>
-                        <td>2020 (&deg;C)</td>
+                        <td>
+                          <p>2018 (&deg;C)</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
+                        <td>
+                          <p>2020 (&deg;C)</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon
+                              text-blue-darkest
+                            "
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -835,8 +932,28 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>2018 (&deg;C)</td>
-                        <td>2020 (&deg;C)</td>
+                        <td>
+                          <p>2018 (&deg;C)</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
+                        <td>
+                          <p>2020 (&deg;C)</p>
+                          <i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon
+                              text-orange-light
+                            "
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -915,8 +1032,18 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>2018 (mm)</td>
-                        <td>2020 (mm)</td>
+                        <td>
+                          <p>2018 (mm)</p>
+                          <i
+                            class="fas fa-cloud-rain table-icon text-blue-mid"
+                          ></i>
+                        </td>
+                        <td>
+                          <p>2020 (mm)</p>
+                          <i
+                            class="fas fa-cloud-rain table-icon text-orange-mid"
+                          ></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>
@@ -1020,12 +1147,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>8 &deg;C</td>
                         <td>5 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>19 &deg;C</td>
                         <td>18 &deg;C</td>
                       </tr>
@@ -1049,7 +1194,17 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain
+                          <i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>0.5 mm</td>
                         <td>8.9 mm</td>
                       </tr>
@@ -1073,12 +1228,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>7 &deg;C</td>
                         <td>6 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>18 &deg;C</td>
                         <td>19 &deg;C</td>
                       </tr>
@@ -1103,7 +1276,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>135.2 mm</td>
                         <td>0.5 mm</td>
                       </tr>
@@ -1128,12 +1310,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>9 &deg;C</td>
                         <td>8 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>18 &deg;C</td>
                         <td>19 &deg;C</td>
                       </tr>
@@ -1158,7 +1358,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>31.7 mm</td>
                         <td>33.2 mm</td>
                       </tr>
@@ -1183,12 +1392,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>10 &deg;C</td>
                         <td>10 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>26 &deg;C</td>
                         <td>25 &deg;C</td>
                       </tr>
@@ -1213,7 +1440,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>34.2 mm</td>
                         <td>8.2 mm</td>
                       </tr>
@@ -1238,12 +1474,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>13 &deg;C</td>
                         <td>13 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>28 &deg;C</td>
                         <td>32 &deg;C</td>
                       </tr>
@@ -1268,7 +1522,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>4.1 mm</td>
                         <td>6.6 mm</td>
                       </tr>
@@ -1293,12 +1556,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>17 &deg;C</td>
                         <td>16 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>31 &deg;C</td>
                         <td>32 &deg;C</td>
                       </tr>
@@ -1323,7 +1604,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>10.3 mm</td>
                         <td>0 mm</td>
                       </tr>
@@ -1348,12 +1638,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>20 &deg;C</td>
                         <td>21 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>35 &deg;C</td>
                         <td>36 &deg;C</td>
                       </tr>
@@ -1378,7 +1686,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>0 mm</td>
                         <td>0.3 mm</td>
                       </tr>
@@ -1403,12 +1720,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>21 &deg;C</td>
                         <td>23 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>33 &deg;C</td>
                         <td>38 &deg;C</td>
                       </tr>
@@ -1433,7 +1768,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>22.1 mm</td>
                         <td>0 mm</td>
                       </tr>
@@ -1458,12 +1802,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>18 &deg;C</td>
                         <td>18 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>35 &deg;C</td>
                         <td>32 &deg;C</td>
                       </tr>
@@ -1488,7 +1850,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>5 mm</td>
                         <td>133.7 mm</td>
                       </tr>
@@ -1513,12 +1884,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>14 &deg;C</td>
                         <td>13 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>27 &deg;C</td>
                         <td>30 &deg;C</td>
                       </tr>
@@ -1543,7 +1932,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>217.8 mm</td>
                         <td>32.5 mm</td>
                       </tr>
@@ -1568,12 +1966,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>12 &deg;C</td>
                         <td>12 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>24 &deg;C</td>
                         <td>24 &deg;C</td>
                       </tr>
@@ -1598,7 +2014,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>54.5 mm</td>
                         <td>86.6 mm</td>
                       </tr>
@@ -1623,12 +2048,30 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Min</td>
+                        <td>
+                          Min<i
+                            class="
+                              fas
+                              fa-thermometer-quarter
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>6 &deg;C</td>
                         <td>9 &deg;C</td>
                       </tr>
                       <tr>
-                        <td>Max</td>
+                        <td>
+                          Max<i
+                            class="
+                              fas
+                              fa-thermometer-three-quarters
+                              table-icon table-icon-row
+                              text-red-2
+                            "
+                          ></i>
+                        </td>
                         <td>19 &deg;C</td>
                         <td>21 &deg;C</td>
                       </tr>
@@ -1653,7 +2096,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Precipitation</td>
+                        <td>
+                          Rain<i
+                            class="
+                              fas
+                              fa-cloud-rain
+                              table-icon table-icon-row
+                              text-blue-mid
+                            "
+                          ></i>
+                        </td>
                         <td>17 mm</td>
                         <td>94.1 mm</td>
                       </tr>
@@ -1689,8 +2141,16 @@
                     <thead>
                       <tr>
                         <td>Month</td>
-                        <td>2018 (MWh)</td>
-                        <td>2019 (MWh)</td>
+                        <td>
+                          <p>2018 (MWh)</p>
+                          <i
+                            class="fas fa-bolt table-icon text-orange-light"
+                          ></i>
+                        </td>
+                        <td>
+                          <p>2019 (MWh)</p>
+                          <i class="fas fa-bolt table-icon text-red-2"></i>
+                        </td>
                       </tr>
                     </thead>
                     <tbody>

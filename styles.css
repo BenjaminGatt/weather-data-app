@@ -750,6 +750,10 @@ a {
   .chart-data {
     grid-column: 3;
   }
+
+  /* .months-table thead td {
+    min-width: 10rem;
+  } */
 }
 
 @media only screen and (max-width: 1000px) {
@@ -784,7 +788,7 @@ a {
 
 @media only screen and (max-width: 500px) {
   .chart-container {
-    min-width: 30rem;
+    min-width: 25rem;
   }
 }
 

@@ -751,9 +751,9 @@ a {
     grid-column: 3;
   }
 
-  /* .months-table thead td {
-    min-width: 10rem;
-  } */
+  .months-table thead td {
+    min-width: 8.7rem;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
